@@ -1,0 +1,94 @@
+.car-wrapper{
+    background-image: url('../assets/tlo_4.png');
+    background-size: cover;
+    background-position: center;
+    flex-basis: 70vh;
+    width: 100vw;
+    padding-left: 10vw;
+    position: relative;
+    // margin-left: auto;
+}
+.car-menu{
+  // transform: translateX(-100%)
+  overflow: scroll;
+  height: 60vh;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  width: 12vw;
+  position: absolute;
+  &__list{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12vw;
+  }
+  &__li{
+    width: 100%;
+    padding-right: 2vw;
+  }
+  &__li img{
+    object-fit: cover;
+    width: 100%;
+    
+  }
+}
+.car {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 100%;
+    height: auto;
+    transform: translateY(-50%);
+    top: 50%;
+    
+    &--size {
+      --d: 4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 6.4; /* distance from left edge of the image to center of front wheel  */
+      --rb: 7.5;   /* distance from right edge of the image to center of back wheel */
+      --bf: 2.5; /* distance from bottom of image to center of front wheel */
+      --bb: 2.5; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+     &__hubcap {
+      position: absolute;
+      width: calc((var(--d) / var(--w)) * 100%);
+      height: calc((var(--d) / var(--h)) * 100%);
+      background-image: url('../assets/kolpaki_bez_opon/4racing/le_mans_pro_pink_black.png');
+      background-position: center;
+      background-size: cover;
+      border-style: solid;
+    }
+    &--hubcap-front {
+      bottom: calc((var(--bf) / var(--h)) * 100%);
+      left: calc((var(--lf) / var(--w)) * 100%);
+      transform: translateX(-50%) translateY(50%);
+    }
+    &--hubcap-back {
+      bottom: calc((var(--bb) / var(--h)) * 100%);
+      right: calc((var(--rb) / var(--w)) * 100%);
+      transform: translateX(50%) translateY(50%);
+    }
+    &__img{
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+  .logo{
+      position: absolute;
+      width: 10vw;
+      top: 0;
+      right: 5%;
+      transform: translateY(-50%)
+}
+.background-menu{
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  &__element img{
+      width: 5vw;
+  }
+}
+

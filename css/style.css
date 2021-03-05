@@ -1,0 +1,411 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+nav {
+  -ms-flex-preferred-size: 10vh;
+      flex-basis: 10vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 3fr 7fr 2fr;
+      grid-template-columns: 3fr 7fr 2fr;
+}
+
+.settings {
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-column: 1/ span 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  padding-left: 2vw;
+  margin-right: 2vw;
+  background-color: #cccccc;
+}
+
+.settings__logo {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.settings__photo {
+  width: 50%;
+}
+
+.navigation {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/ span 1;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[6];
+      grid-template-columns: repeat(6, 1fr);
+  padding-left: 2vw;
+  margin-right: 2vw;
+}
+
+.navigation__logo {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+.navigation__photo {
+  width: 60%;
+}
+
+.car-wrapper {
+  background-image: url("../assets/tlo_4.png");
+  background-size: cover;
+  background-position: center;
+  -ms-flex-preferred-size: 70vh;
+      flex-basis: 70vh;
+  width: 100vw;
+  padding-left: 10vw;
+  position: relative;
+}
+
+.car-menu {
+  overflow: scroll;
+  height: 60vh;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+  width: 12vw;
+  position: absolute;
+}
+
+.car-menu__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 12vw;
+}
+
+.car-menu__li {
+  width: 100%;
+  padding-right: 2vw;
+}
+
+.car-menu__li img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.car {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: auto;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  top: 50%;
+}
+
+.car--size {
+  --d: 4;
+  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+  --lf: 6.4;
+  /* distance from left edge of the image to center of front wheel  */
+  --rb: 7.5;
+  /* distance from right edge of the image to center of back wheel */
+  --bf: 2.5;
+  /* distance from bottom of image to center of front wheel */
+  --bb: 2.5;
+  /* distance from bottom of image to center of back wheel */
+  --w: 30;
+  /* width of the image */
+  --h: 11;
+  /* height of the image */
+}
+
+.car__hubcap {
+  position: absolute;
+  width: calc((var(--d) / var(--w)) * 100%);
+  height: calc((var(--d) / var(--h)) * 100%);
+  background-image: url("../assets/kolpaki_bez_opon/4racing/le_mans_pro_pink_black.png");
+  background-position: center;
+  background-size: cover;
+  border-style: solid;
+}
+
+.car--hubcap-front {
+  bottom: calc((var(--bf) / var(--h)) * 100%);
+  left: calc((var(--lf) / var(--w)) * 100%);
+  -webkit-transform: translateX(-50%) translateY(50%);
+          transform: translateX(-50%) translateY(50%);
+}
+
+.car--hubcap-back {
+  bottom: calc((var(--bb) / var(--h)) * 100%);
+  right: calc((var(--rb) / var(--w)) * 100%);
+  -webkit-transform: translateX(50%) translateY(50%);
+          transform: translateX(50%) translateY(50%);
+}
+
+.car__img {
+  margin: 0 auto;
+  width: 100%;
+}
+
+.logo {
+  position: absolute;
+  width: 10vw;
+  top: 0;
+  right: 5%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.background-menu {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.background-menu__element img {
+  width: 5vw;
+}
+
+.splide {
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-top: 2vh;
+}
+
+.splide img {
+  height: 20vh;
+}
+
+.splide__slide__container {
+  text-align: center;
+}
+
+.splide__arrow--prev {
+  margin-left: -2.5vw;
+}
+
+.splide__arrow--next {
+  margin-right: -2.5vw;
+}
+
+.splide__header {
+  font-size: .5rem;
+  text-transform: uppercase;
+  margin-bottom: 1vh;
+  font-weight: 700;
+}
+
+@media (min-width: 1000px) {
+  .splide__header {
+    font-size: .75rem;
+  }
+}
+
+.splide__sub-header {
+  min-width: 100px;
+  font-size: .5rem;
+  margin-bottom: 1vh;
+}
+
+@media (min-width: 1000px) {
+  .splide__sub-header {
+    font-size: .75rem;
+  }
+}
+
+.header {
+  font-family: 'Lato', sans-serif;
+  text-align: center;
+}
+
+ul.splide__pagination {
+  display: none;
+}
+
+.visiblity {
+  visibility: hidden;
+}
+
+.info {
+  -ms-flex-preferred-size: 17.5vh;
+      flex-basis: 17.5vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 57.12vw 14.28vw 28.56vw;
+      grid-template-columns: 57.12vw 14.28vw 28.56vw;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+}
+
+.info__logo-wrapper {
+  background: #cecece;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 100%;
+}
+
+.info__logo {
+  height: 100%;
+  width: 100%;
+  padding: 0 2vw;
+}
+
+.description {
+  /* display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    text-transform: uppercase;
+    align-items: center; */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-transform: uppercase;
+}
+
+.description--flex {
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.description__header {
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color: grey;
+  font-size: 1.25rem;
+}
+
+@media (min-width: 1000px) {
+  .description__header {
+    font-size: 1.75rem;
+  }
+}
+
+.description__color {
+  font-size: .75rem;
+}
+
+@media (min-width: 1000px) {
+  .description__color {
+    font-size: 1.25rem;
+  }
+}
+
+.description__size {
+  font-weight: 700;
+  font-size: 1rem;
+  color: black;
+}
+
+@media (min-width: 1000px) {
+  .description__size {
+    font-size: 1.5rem;
+  }
+}
+
+.description--background {
+  background-color: #ebebeb;
+}
+
+.footer {
+  font-size: .6rem;
+  font-family: 'Lato', sans-serif;
+  text-align: right;
+  margin-right: 1rem;
+}
+
+.footer__name {
+  color: #DB004E;
+}
+
+.footer__surname {
+  color: #23527c;
+}
+/*# sourceMappingURL=style.css.map */

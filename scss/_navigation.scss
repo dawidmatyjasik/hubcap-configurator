@@ -1,0 +1,36 @@
+nav{
+    flex-basis: 10vh;
+    display: grid;
+    grid-template-columns: 3fr 7fr 2fr;
+    
+}
+.settings{
+    grid-column: 1/ span 1;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    // height: 10vh;
+    padding-left: 2vw;
+    margin-right: 2vw;
+    background-color: #cccccc;
+    &__logo{
+        align-self: center;
+    }
+    &__photo{
+        width: 50%;
+    }
+}
+.navigation{
+    grid-column: 2/ span 1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    // height: 10vh;
+    padding-left: 2vw;
+    margin-right: 2vw;
+    &__logo{
+        align-self: center;
+    }
+    &__photo{
+        width: 60%;
+    }
+}
+

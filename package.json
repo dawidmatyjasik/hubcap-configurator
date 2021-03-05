@@ -1,0 +1,13 @@
+{
+  "name": "sass-hamburger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "webpack.config.js",
+  "dependencies": {
+    "@splidejs/splide": "^2.4.21"
+  },
+  "devDependencies": {},
+  "scripts": {},
+  "author": "Dawid Spisak",
+  "license": "ISC"
+}
