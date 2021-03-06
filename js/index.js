@@ -49,7 +49,14 @@ const handleWindowSize = () => {
     }
     const setWindowSize = () => {
         const carWrapper = document.querySelector('.car-wrapper');
+        const carModelList = document.querySelector('.car-menu__model-list');
         height = carWrapper.offsetHeight;
+        console.log(carModelList);
+        carModelList.classList.remove('visiblity');
+        carModelList.classList.add('is-hidden');
+
+        console.log(carModelList);
+
         document.querySelector('.car-menu').style.height = `${height}px`
     }
     window.addEventListener('load', setWindowSize)
