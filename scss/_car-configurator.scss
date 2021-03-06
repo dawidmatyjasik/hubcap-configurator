@@ -1,37 +1,44 @@
+
 .car-wrapper{
     background-image: url('../assets/tlo_4.png');
     background-size: cover;
     background-position: center;
     flex-basis: 70vh;
     width: 100vw;
-    padding-left: 10vw;
     position: relative;
-    // margin-left: auto;
+    margin-left: auto;
 }
 .car-menu{
-  // transform: translateX(-100%)
-  overflow: scroll;
   height: 60vh;
-  background-color: #fff;
   left: 0;
   top: 0;
   width: 12vw;
   position: absolute;
-  &__list{
+
+  &__model-list{
+    width: 12vw;
+    overflow: scroll;
+    
+  }
+  &__color-list{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 12vw;
+    overflow: scroll;
+    
   }
   &__li{
     width: 100%;
-    padding-right: 2vw;
   }
+
   &__li img{
     object-fit: cover;
     width: 100%;
     
+    
   }
+  
 }
 .car {
     display: flex;
@@ -42,6 +49,7 @@
     height: auto;
     transform: translateY(-50%);
     top: 50%;
+    padding-left: -10vw;
     
     &--size {
       --d: 4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
@@ -91,4 +99,10 @@
       width: 5vw;
   }
 }
-
+.is-hidden{
+  display: none;
+  z-index: -1;
+}
+.visibility{
+  visibility: hidden;
+}

@@ -1,36 +1,45 @@
 nav{
-    flex-basis: 10vh;
     display: grid;
     grid-template-columns: 3fr 7fr 2fr;
-    
 }
 .settings{
     grid-column: 1/ span 1;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    // height: 10vh;
-    padding-left: 2vw;
     margin-right: 2vw;
     background-color: #cccccc;
     &__logo{
-        align-self: center;
+        display: inline-grid;
+         place-items: center;
+         
+
     }
     &__photo{
         width: 50%;
+        height: 100%;
+        object-fit: contain;
+    }
+    &--background{
+        background-color: white;
     }
 }
 .navigation{
     grid-column: 2/ span 1;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
+    margin-right: 2vw;
     // height: 10vh;
     padding-left: 2vw;
     margin-right: 2vw;
     &__logo{
-        align-self: center;
+        display: inline-grid;
+         place-items: center;
+         
     }
     &__photo{
-        width: 60%;
+        width: 50%;
+        height: 100%;
+        object-fit: contain;
     }
 }
 
