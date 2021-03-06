@@ -3,7 +3,7 @@
     background-image: url('../assets/tlo_4.png');
     background-size: cover;
     background-position: center;
-    flex-basis: 70vh;
+    flex-basis: 68vh;
     width: 100vw;
     position: relative;
     margin-left: auto;
@@ -28,16 +28,31 @@
     overflow: scroll;
     
   }
+  &__model-li{
+    width: 100%;
+  }
+
+  &__color-li{
+    width: 100%;
+  }
+
+  &__model-li img{
+    object-fit: cover;
+    width: 100%;  
+  }
+  &__color-li img{
+    object-fit: cover;
+    width: 100%;  
+  }
   &__li{
     width: 100%;
   }
 
   &__li img{
     object-fit: cover;
-    width: 100%;
-    
-    
+    width: 100%;  
   }
+  
   
 }
 .car {

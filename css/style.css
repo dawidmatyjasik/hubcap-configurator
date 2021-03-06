@@ -9,18 +9,6 @@
   padding: 0;
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -62,11 +50,25 @@ table {
   border-spacing: 0;
 }
 
+body {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
 nav {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 3fr 7fr 2fr;
       grid-template-columns: 3fr 7fr 2fr;
+  -ms-flex-preferred-size: 10vh;
+      flex-basis: 10vh;
 }
 
 .settings {
@@ -128,8 +130,8 @@ nav {
   background-image: url("../assets/tlo_4.png");
   background-size: cover;
   background-position: center;
-  -ms-flex-preferred-size: 70vh;
-      flex-basis: 70vh;
+  -ms-flex-preferred-size: 68vh;
+      flex-basis: 68vh;
   width: 100vw;
   position: relative;
   margin-left: auto;
@@ -161,6 +163,26 @@ nav {
           align-items: center;
   width: 12vw;
   overflow: scroll;
+}
+
+.car-menu__model-li {
+  width: 100%;
+}
+
+.car-menu__color-li {
+  width: 100%;
+}
+
+.car-menu__model-li img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+
+.car-menu__color-li img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
 }
 
 .car-menu__li {
@@ -262,18 +284,35 @@ nav {
   visibility: hidden;
 }
 
+/* &__logo{
+    display: inline-grid;
+     place-items: center;
+     
+
+}
+&__photo{
+    width: 50%;
+    height: 100%;
+    object-fit: contain;
+} */
 .splide {
   margin-left: 5vw;
   margin-right: 5vw;
-  margin-top: 2vh;
-}
-
-.splide img {
   height: 20vh;
 }
 
-.splide__slide__container {
-  text-align: center;
+.splide__slide {
+  display: -ms-inline-grid;
+  display: inline-grid;
+  place-items: center;
+  width: 100%;
+}
+
+.splide img {
+  width: 100%;
+  height: 15vh;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .splide__arrow--prev {
@@ -287,7 +326,8 @@ nav {
 .splide__header {
   font-size: .5rem;
   text-transform: uppercase;
-  margin-bottom: 1vh;
+  margin-top: 1vh;
+  margin-bottom: .5vh;
   font-weight: 700;
 }
 
@@ -298,9 +338,8 @@ nav {
 }
 
 .splide__sub-header {
-  min-width: 100px;
   font-size: .5rem;
-  margin-bottom: 1vh;
+  margin-bottom: .5vh;
 }
 
 @media (min-width: 1000px) {
@@ -323,6 +362,8 @@ ul.splide__pagination {
 }
 
 .info {
+  -ms-flex-preferred-size: 18vh;
+      flex-basis: 18vh;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 57.12vw 14.28vw 28.56vw;
@@ -335,10 +376,14 @@ ul.splide__pagination {
   background: #cecece;
   -ms-grid-column-align: center;
       justify-self: center;
+  display: -ms-inline-grid;
+  display: inline-grid;
+  place-items: center;
   width: 100%;
 }
 
 .info__logo {
+  height: 100%;
   width: 100%;
   padding: 0 2vw;
 }
@@ -413,6 +458,8 @@ ul.splide__pagination {
 }
 
 .footer {
+  -ms-flex-preferred-size: 2vh;
+      flex-basis: 2vh;
   font-size: .6rem;
   font-family: 'Lato', sans-serif;
   text-align: right;

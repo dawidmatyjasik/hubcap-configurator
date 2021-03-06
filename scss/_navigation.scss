@@ -1,6 +1,13 @@
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
 nav{
     display: grid;
     grid-template-columns: 3fr 7fr 2fr;
+    flex-basis: 10vh;
 }
 .settings{
     grid-column: 1/ span 1;

@@ -42,6 +42,7 @@ const handleMenu = () => {
 }
 
 const handleWindowSize = () => {
+
     const reportWindowSize = () => {
         const carWrapper = document.querySelector('.car-wrapper');
         height = carWrapper.offsetHeight;
@@ -51,18 +52,45 @@ const handleWindowSize = () => {
         const carWrapper = document.querySelector('.car-wrapper');
         const carModelList = document.querySelector('.car-menu__model-list');
         height = carWrapper.offsetHeight;
-        console.log(carModelList);
         carModelList.classList.remove('visiblity');
         carModelList.classList.add('is-hidden');
-
-        console.log(carModelList);
-
         document.querySelector('.car-menu').style.height = `${height}px`
     }
     window.addEventListener('load', setWindowSize)
     window.addEventListener('resize', reportWindowSize);
 
 }
+const handleCarMenu = () => {
+    const carImg = document.querySelector('.car__img');
+    let choices = {
+        carChoice: "bmw",
+        colorChoice: "white",
+    };
 
+    const pickModelAndColor = (e) => {
+        const origin = e.target;
+
+        console.log(carImg);
+
+        if (origin.dataset.colorType || origin.dataset.carType) {
+            choices.carChoice = origin.dataset.carType || choices.carChoice;
+            choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
+            carImg.src = `assets/auto/${choices.carChoice}/${choices.colorChoice}.png`
+        }
+    }
+    document.addEventListener("click", pickModelAndColor);
+
+}
+
+
+
+
+
+
+
+handleCarMenu()
 handleWindowSize()
 handleMenu()
+
+
+
