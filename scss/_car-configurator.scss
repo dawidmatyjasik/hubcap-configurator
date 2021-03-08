@@ -28,24 +28,9 @@
     overflow: scroll;
     
   }
-  &__model-li{
-    width: 100%;
-  }
-
-  &__color-li{
-    width: 100%;
-  }
-
-  &__model-li img{
-    object-fit: cover;
-    width: 100%;  
-  }
-  &__color-li img{
-    object-fit: cover;
-    width: 100%;  
-  }
   &__li{
     width: 100%;
+    cursor: pointer;
   }
 
   &__li img{
@@ -188,8 +173,8 @@
   }
 }
 .is-hidden{
-  display: none;
-  z-index: -1;
+  display: none !important;
+  z-index: -1 !important;
 }
 .visibility{
   visibility: hidden;

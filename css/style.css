@@ -94,6 +94,11 @@ nav {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  cursor: pointer;
+}
+
+.settings--cursor {
+  cursor: auto;
 }
 
 .settings--background {
@@ -124,6 +129,7 @@ nav {
   height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
+  cursor: pointer;
 }
 
 .car-wrapper {
@@ -165,28 +171,9 @@ nav {
   overflow: scroll;
 }
 
-.car-menu__model-li {
-  width: 100%;
-}
-
-.car-menu__color-li {
-  width: 100%;
-}
-
-.car-menu__model-li img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-}
-
-.car-menu__color-li img {
-  -o-object-fit: cover;
-     object-fit: cover;
-  width: 100%;
-}
-
 .car-menu__li {
   width: 100%;
+  cursor: pointer;
 }
 
 .car-menu__li img {
@@ -412,25 +399,14 @@ nav {
 }
 
 .is-hidden {
-  display: none;
-  z-index: -1;
+  display: none !important;
+  z-index: -1 !important;
 }
 
 .visibility {
   visibility: hidden;
 }
 
-/* &__logo{
-    display: inline-grid;
-     place-items: center;
-     
-
-}
-&__photo{
-    width: 50%;
-    height: 100%;
-    object-fit: contain;
-} */
 .splide {
   margin-left: 5vw;
   margin-right: 5vw;

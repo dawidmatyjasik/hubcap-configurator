@@ -19,13 +19,19 @@ nav{
         display: inline-grid;
          place-items: center;
          
+         
 
     }
     &__photo{
         width: 50%;
         height: 100%;
         object-fit: contain;
+        cursor: pointer;
     }
+    &--cursor{
+        cursor: auto;
+    }
+        
     &--background{
         background-color: white;
     }
@@ -47,6 +53,7 @@ nav{
         width: 50%;
         height: 100%;
         object-fit: contain;
+        cursor: pointer;
     }
 }
 

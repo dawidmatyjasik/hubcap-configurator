@@ -60,96 +60,116 @@ const handleWindowSize = () => {
     window.addEventListener('resize', reportWindowSize);
 
 }
-const resetValues = () => {
-    const car = document.querySelector('.car');
-    car.classList.remove('car--size-default',
-        'car--size-mercedes',
-        'car--size-range',
-        'car--size-vw',
-        'car--size-fiat',
-        'car--size-van',
-        'car--size-bus',
-        'car--size-truck')
 
-}
 const handleCarMenu = () => {
     const carImg = document.querySelector('.car__img');
     const car = document.querySelector('.car');
+    const list = document.querySelectorAll('.car-menu__li-img')
     let choices = {
         carChoice: "bmw",
         colorChoice: "black",
     };
+    const resetCarValues = () => {
+        const car = document.querySelector('.car');
+        car.classList.remove('car--size-default',
+            'car--size-mercedes',
+            'car--size-range',
+            'car--size-vw',
+            'car--size-fiat',
+            'car--size-van',
+            'car--size-bus',
+            'car--size-truck')
 
+    }
 
     const pickModelAndColor = (e) => {
         const origin = e.target;
-
-
-
-
         if (origin.dataset.colorType || origin.dataset.carType) {
             choices.carChoice = origin.dataset.carType || choices.carChoice;
             choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
             carImg.src = `assets/auto/${choices.carChoice}/${choices.colorChoice}.png`
         }
-
+        resetCarValues()
         if (origin.dataset.carType === "bmw") {
-            resetValues()
             car.classList.add('car--size-default')
         }
-        if (origin.dataset.carType === "mazda") {
-            resetValues()
+        else if (origin.dataset.carType === "mazda") {
             car.classList.add('car--size-default')
         }
-        if (origin.dataset.carType === "mazda_wagon") {
-            resetValues()
+        else if (origin.dataset.carType === "mazda_wagon") {
             car.classList.add('car--size-default')
         }
-        if (origin.dataset.carType === "mercedes") {
-            resetValues()
+        else if (origin.dataset.carType === "mercedes") {
             car.classList.add('car--size-mercedes')
         }
-        if (origin.dataset.carType === "range") {
-            resetValues()
+        else if (origin.dataset.carType === "range") {
             car.classList.add('car--size-range')
         }
-        if (origin.dataset.carType === "vw") {
-            resetValues()
+        else if (origin.dataset.carType === "vw") {
             car.classList.add('car--size-vw')
         }
-        if (origin.dataset.carType === "fiat") {
-            resetValues()
+        else if (origin.dataset.carType === "fiat") {
             car.classList.add('car--size-fiat')
         }
-        if (origin.dataset.carType === "van") {
-            resetValues()
+        else if (origin.dataset.carType === "van") {
             car.classList.add('car--size-van')
         }
-        if (origin.dataset.carType === "minibus") {
-            resetValues()
+        else if (origin.dataset.carType === "minibus") {
             car.classList.add('car--size-van')
         }
-        if (origin.dataset.carType === "bus_scania") {
-            resetValues()
+        else if (origin.dataset.carType === "bus_scania") {
             car.classList.add('car--size-bus')
         }
-        if (origin.dataset.carType === "truck") {
-            resetValues()
+        else if (origin.dataset.carType === "truck") {
             car.classList.add('car--size-truck')
         }
+    }
+    list.forEach(li => {
+        li.addEventListener("click", pickModelAndColor);
+    });
 
+}
+const handleRimMenu = () => {
+    const list = document.querySelectorAll('.navigation__photo')
+    const menu = document.querySelectorAll('.splide__list')
+    const argo = document.querySelector('.argo');
+    const racing = document.querySelector('.racing');
+    const jtac = document.querySelector('.jtac');
+    const max6 = document.querySelector('.max6');
+    const resetCompanyValues = () => {
+        menu.forEach(li => {
+            li.classList.add('is-hidden')
+
+        });
+    }
+    const pickCompany = (e) => {
+        const origin = e.target;
+        console.log(origin.dataset.companyName);
+        resetCompanyValues()
+        if (origin.dataset.companyName === "argo") {
+            argo.classList.remove('is-hidden')
+        }
+        else if (origin.dataset.companyName === "4racing") {
+            racing.classList.remove('is-hidden')
+        }
+        else if (origin.dataset.companyName === "jtac") {
+            jtac.classList.remove('is-hidden')
+        }
+        else if (origin.dataset.companyName === "max6") {
+            max6.classList.remove('is-hidden')
+        }
 
     }
-    document.addEventListener("click", pickModelAndColor);
-
+    list.forEach(li => {
+        li.addEventListener('click', pickCompany)
+    })
 }
 
 
 
 
 
-
-
+handleRimMenu()
 handleCarMenu()
 handleWindowSize()
 handleMenu()
