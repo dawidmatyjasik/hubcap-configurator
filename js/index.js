@@ -60,23 +60,85 @@ const handleWindowSize = () => {
     window.addEventListener('resize', reportWindowSize);
 
 }
+const resetValues = () => {
+    const car = document.querySelector('.car');
+    car.classList.remove('car--size-default',
+        'car--size-mercedes',
+        'car--size-range',
+        'car--size-vw',
+        'car--size-fiat',
+        'car--size-van',
+        'car--size-bus',
+        'car--size-truck')
+
+}
 const handleCarMenu = () => {
     const carImg = document.querySelector('.car__img');
+    const car = document.querySelector('.car');
     let choices = {
         carChoice: "bmw",
-        colorChoice: "white",
+        colorChoice: "black",
     };
+
 
     const pickModelAndColor = (e) => {
         const origin = e.target;
 
-        console.log(carImg);
+
+
 
         if (origin.dataset.colorType || origin.dataset.carType) {
             choices.carChoice = origin.dataset.carType || choices.carChoice;
             choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
             carImg.src = `assets/auto/${choices.carChoice}/${choices.colorChoice}.png`
         }
+
+        if (origin.dataset.carType === "bmw") {
+            resetValues()
+            car.classList.add('car--size-default')
+        }
+        if (origin.dataset.carType === "mazda") {
+            resetValues()
+            car.classList.add('car--size-default')
+        }
+        if (origin.dataset.carType === "mazda_wagon") {
+            resetValues()
+            car.classList.add('car--size-default')
+        }
+        if (origin.dataset.carType === "mercedes") {
+            resetValues()
+            car.classList.add('car--size-mercedes')
+        }
+        if (origin.dataset.carType === "range") {
+            resetValues()
+            car.classList.add('car--size-range')
+        }
+        if (origin.dataset.carType === "vw") {
+            resetValues()
+            car.classList.add('car--size-vw')
+        }
+        if (origin.dataset.carType === "fiat") {
+            resetValues()
+            car.classList.add('car--size-fiat')
+        }
+        if (origin.dataset.carType === "van") {
+            resetValues()
+            car.classList.add('car--size-van')
+        }
+        if (origin.dataset.carType === "minibus") {
+            resetValues()
+            car.classList.add('car--size-van')
+        }
+        if (origin.dataset.carType === "bus_scania") {
+            resetValues()
+            car.classList.add('car--size-bus')
+        }
+        if (origin.dataset.carType === "truck") {
+            resetValues()
+            car.classList.add('car--size-truck')
+        }
+
+
     }
     document.addEventListener("click", pickModelAndColor);
 

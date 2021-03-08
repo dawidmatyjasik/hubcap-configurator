@@ -68,13 +68,86 @@
     
     &--size {
       --d: 4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
-      --lf: 6.4; /* distance from left edge of the image to center of front wheel  */
+      --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
       --rb: 7.5;   /* distance from right edge of the image to center of back wheel */
-      --bf: 2.5; /* distance from bottom of image to center of front wheel */
-      --bb: 2.5; /* distance from bottom of image to center of back wheel */
+      --bf: 2.45; /* distance from bottom of image to center of front wheel */
+      --bb: 2.45; /* distance from bottom of image to center of back wheel */
       --w: 30;   /* width of the image */
       --h: 11;    /* height of the image */
      }
+     &--size-default {
+      --d: 4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
+      --rb: 7.5;   /* distance from right edge of the image to center of back wheel */
+      --bf: 2.45; /* distance from bottom of image to center of front wheel */
+      --bb: 2.45; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+    &--size-mercedes{
+      --d: 4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
+      --rb: 8.55;   /* distance from right edge of the image to center of back wheel */
+      --bf: 2.45; /* distance from bottom of image to center of front wheel */
+      --bb: 2.45; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+    }
+    &--size-range {
+      --d: 4.4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
+      --rb: 8.33;   /* distance from right edge of the image to center of back wheel */
+      --bf: 2.45; /* distance from bottom of image to center of front wheel */
+      --bb: 2.45; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+    &--size-vw {
+      --d: 4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
+      --rb: 7.1;   /* distance from right edge of the image to center of back wheel */
+      --bf: 2.45; /* distance from bottom of image to center of front wheel */
+      --bb: 2.45; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+    &--size-fiat {
+      --d: 3.3;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
+      --rb: 9.65;   /* distance from right edge of the image to center of back wheel */ 
+      --bf: 2.35; /* distance from bottom of image to center of front wheel */
+      --bb: 2.35; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+    &--size-van {
+      --d: 2.9;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 5.95; /* distance from left edge of the image to center of front wheel  */
+      --rb: 8.53;   /* distance from right edge of the image to center of back wheel */
+      --bf: 2.15; /* distance from bottom of image to center of front wheel */
+      --bb: 2.15; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+    &--size-bus {
+      --d: 2;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 6.42; /* distance from left edge of the image to center of front wheel  */
+      --rb: 9.5;   /* distance from right edge of the image to center of back wheel */
+      --bf: 1.5; /* distance from bottom of image to center of front wheel */
+      --bb: 1.5; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+     &--size-truck {
+      --d: 2.2;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+      --lf: 8.625; /* distance from left edge of the image to center of front wheel  */
+      --rb: 12.45;   /* distance from right edge of the image to center of back wheel */
+      --bf: 1.55; /* distance from bottom of image to center of front wheel */
+      --bb: 1.55; /* distance from bottom of image to center of back wheel */
+      --w: 30;   /* width of the image */
+      --h: 11;    /* height of the image */
+     }
+
      &__hubcap {
       position: absolute;
       width: calc((var(--d) / var(--w)) * 100%);
