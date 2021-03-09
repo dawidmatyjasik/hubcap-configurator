@@ -154,6 +154,25 @@ const handleRimMenu = () => {
 
         });
     }
+    document.addEventListener('DOMContentLoaded', () => {
+        const a = new Splide('#a', {
+            perPage: 5,
+            perMove: 1,
+            // cover: true,
+            breakpoints: {
+                500: {
+                    perPage: 2,
+                },
+                640: {
+                    perPage: 3,
+                },
+                780: {
+                    perPage: 3,
+                }
+            }
+        }).mount();
+
+    });
     const pickCompany = (e) => {
         const origin = e.target;
         const b = new Splide('#b', {
@@ -247,7 +266,6 @@ const handleRimChange = () => {
         company: `argo`,
         model: `avalone_pro`
     }
-    console.log(menu);
 
     const pickCompany = (e) => {
         const origin = e.target;
@@ -256,6 +274,12 @@ const handleRimChange = () => {
     }
     const pickModel = (e) => {
         const origin = e.target;
+        const header = document.querySelector('.description__header');
+        const color = document.querySelector('.description__color');
+        const size = document.querySelector('.description__size');
+        header.textContent = origin.dataset.modelHeader
+        color.textContent = origin.dataset.modelColor
+        size.textContent = origin.dataset.modelSize
         src.model = origin.dataset.modelName;
         hubcaps.forEach(hubcap => {
             hubcap.style.backgroundImage = `url('assets/kolpaki_bez_opon/${src.company}/${src.model}.png')`
