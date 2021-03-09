@@ -16,11 +16,6 @@
     }
 }
 .description{
-    /* display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(3, 1fr);
-    text-transform: uppercase;
-    align-items: center; */
     display:flex;
     flex-direction: column;
     text-transform: uppercase;
@@ -33,7 +28,7 @@
     }
     &__header{
         font-weight: 700;
-        font-family: 'Lato', sans-serif;
+        font-family: 'Open Sans', sans-serif;
         color: grey;
         font-size: 1.25rem;
         @media (min-width: 1000px) {
@@ -62,7 +57,7 @@
 .footer{
     flex-basis: 2vh;
     font-size: .6rem;
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-align: right;
     margin-right: 1rem;
     &__name{

@@ -293,17 +293,32 @@ const handleRimChange = () => {
         li.addEventListener('click', pickModel)
     })
 }
+const handleBackgroundChange = () => {
+    const backgroundImages = document.querySelectorAll('.background-menu__image')
+    changeBackground = (e) => {
+        const origin = e.target
+        const background = document.querySelector('.car-wrapper')
+        if (origin.dataset.background === "tlo_4") {
+            background.style.backgroundImage = `url('../assets/${origin.dataset.background}.png')`
 
+        } else if (origin.dataset.background === "tlo_2") {
+            background.style.backgroundImage = `url('../assets/${origin.dataset.background}.png')`
+        } else if (origin.dataset.background === "tlo_3") {
+            background.style.backgroundImage = `url('../assets/${origin.dataset.background}.png')`
+        }
+    }
 
+    backgroundImages.forEach(image => {
+        image.addEventListener('click', changeBackground)
 
-
-
-
+    });
+}
 handleMenu()
 handleWindowSize()
 handleCarMenu()
 handleRimMenu()
 handleRimChange()
+handleBackgroundChange()
 
 
 

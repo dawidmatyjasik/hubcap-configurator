@@ -7,6 +7,7 @@
         display: inline-grid;
         place-items: center;  
         width: 100%;
+        position: relative;
     }
 
     & img{
@@ -41,8 +42,20 @@
     
     
 }
+.fa-plus-circle{
+    cursor: pointer;
+    position: absolute;
+    bottom: 7%;
+    right: 10%;
+    @media (min-width: 780px) {
+        right: 0;
+    }
+    @media (min-width: 1200px) {
+        font-size: 20px;
+    }
+}
 .header{
-    font-family: 'Lato', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-align: center;
     
 }
