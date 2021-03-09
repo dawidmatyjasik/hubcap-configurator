@@ -407,6 +407,10 @@ nav {
   visibility: hidden;
 }
 
+.is-hidden .splide__arrows {
+  visibility: hidden;
+}
+
 .splide {
   margin-left: 5vw;
   margin-right: 5vw;
@@ -495,8 +499,7 @@ ul.splide__pagination {
 }
 
 .info__logo {
-  height: 100%;
-  width: 100%;
+  width: 80%;
   padding: 0 2vw;
 }
 

@@ -2,271 +2,416 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Hubcap configurator</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide.min.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Hubcap configurator</title>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap"
+                rel="stylesheet">
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="node_modules/@splidejs/splide/dist/css/splide.min.css">
 </head>
 
 <body>
-    <nav>
-        <ul class="settings">
-            <li class="settings__logo" data-list-type="models"><img src="assets/ikony/samochod.png"
-                    class="settings__photo"></li>
-            <li class="settings__logo" data-list-type="colors"><img src="assets/ikony/lupa kopia.png"
-                    class="settings__photo"></li>
-            <li class="settings__logo" data-list-type="company"> <img src="assets/ikony/felga.png"
-                    class="settings__photo"></li>
-            <li class="settings__logo settings--background"> <img src="assets/ikony/arrow.png"
-                    class="settings__photo  settings--cursor">
-            </li>
-        </ul>
-        <ul class="navigation">
-            <li class="navigation__logo"><img src="assets/logo/argo.png" data-company-name="argo"
-                    class="navigation__photo"></li>
-            <li class="navigation__logo"><img src="assets/logo/4racing.png" data-company-name="4racing"
-                    class="navigation__photo"></li>
-            <li class="navigation__logo"> <img src="assets/logo//j-tec.png" data-company-name="jtac"
-                    class="navigation__photo"></li>
-            <li class="navigation__logo"> <img src="assets/logo/max6.png" data-company-name="max6"
-                    class="navigation__photo"></li>
-            <li class="navigation__logo"> <img src="assets/logo/van.png" data-company-name="van"
-                    class="navigation__photo">
-            </li>
-            <li class="navigation__logo"> <img src="assets/logo/truck.png" data-company-name="truck"
-                    class="navigation__photo"></li>
-        </ul>
+        <nav>
+                <ul class="settings">
+                        <li class="settings__logo" data-list-type="models"><img src="assets/ikony/samochod.png"
+                                        class="settings__photo"></li>
+                        <li class="settings__logo" data-list-type="colors"><img src="assets/ikony/lupa kopia.png"
+                                        class="settings__photo"></li>
+                        <li class="settings__logo" data-list-type="company"> <img src="assets/ikony/felga.png"
+                                        class="settings__photo"></li>
+                        <li class="settings__logo settings--background"> <img src="assets/ikony/arrow.png"
+                                        class="settings__photo  settings--cursor">
+                        </li>
+                </ul>
+                <ul class="navigation">
+                        <li class="navigation__logo"><img src="assets/logo/argo.png" data-company-name="argo"
+                                        class="navigation__photo"></li>
+                        <li class="navigation__logo"><img src="assets/logo/4racing.png" data-company-name="4racing"
+                                        class="navigation__photo"></li>
+                        <li class="navigation__logo"> <img src="assets/logo//j-tec.png" data-company-name="jtac"
+                                        class="navigation__photo"></li>
+                        <li class="navigation__logo"> <img src="assets/logo/max6.png" data-company-name="max6"
+                                        class="navigation__photo"></li>
+                </ul>
 
-    </nav>
-
-    <div class="car-wrapper">
-
-        <nav class="car-menu">
-            <ul class="car-menu__model-list visiblity">
-                <li class="car-menu__li"><img src="assets//menu/bmw.png" alt="" data-car-type="bmw"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/menu/mazda_sedan.png" alt="" data-car-type="mazda"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets//menu/mazda_kombi.png" alt="" data-car-type="mazda_wagon"
-                        class="car-menu__li-img">
-                </li>
-                <li class="car-menu__li"><img src="assets//menu/mercedes.png" alt="" data-car-type="mercedes"
-                        class="car-menu__li-img">
-                </li>
-                <li class="car-menu__li"><img src="assets//menu/range.png" alt="" data-car-type="range"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets//menu/vw.png" alt="" data-car-type="vw"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets//menu/fiat.png" alt="" data-car-type="fiat"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets//menu/van.png" alt="" data-car-type="van"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets//menu/minibus.png" alt="" data-car-type="minibus"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets//menu/bus.png" alt="" data-car-type="bus_scania"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets//menu/truck.png" alt="" data-car-type="truck"
-                        class="car-menu__li-img"></li>
-            </ul>
-            <ul class="car-menu__color-list is-hidden">
-                <li class="car-menu__li"><img src="assets/kolory/white.png" alt="" data-color-type="white"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/silver.png" alt="" data-color-type="silver"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/black.png" alt="" data-color-type="black"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/gold.png" alt="" data-color-type="gold"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/red.png" alt="" data-color-type="red"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/orange.png" alt="" data-color-type="orange"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/yellow.png" alt="" data-color-type="yellow"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/pink.png" alt="" data-color-type="pink"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/violet.png" alt="" data-color-type="violet"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/blue.png" alt="" data-color-type="blue"
-                        class="car-menu__li-img"></li>
-                <li class="car-menu__li"><img src="assets/kolory/green.png" alt="" data-color-type="green"
-                        class="car-menu__li-img"></li>
-            </ul>
         </nav>
-        <main class="car car--size-default">
-            <img src="assets/auto/bmw/black.png" class="car__img">
-            <div class="car__hubcap car--hubcap-front"></div>
-            <div class="car__hubcap car--hubcap-back"></div>
-            <img src="assets/logo/gorecki-kopia.png" alt="górecki logo" class="logo">
-            <ul class="background-menu">
-                <li class="background-menu__element"><img src="assets/tlo_1.png" class="background-menu__image"></li>
-                <li class="background-menu__element"><img src="assets/tlo_2.png" class="background-menu__image"></li>
-                <li class="background-menu__element"><img src="assets/tlo_3.png" class="background-menu__image"></li>
-            </ul>
-        </main>
-    </div>
-    <section class="info">
-        <div class="splide">
-            <div class="splide__track">
-                <ul class="splide__list argo">
-                    <li class="splide__slide">
-                        <h1 class="splide__header header"><span class="header__title">avalone pro</span></h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description"></span></h2>
 
-                        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image">
-                    </li>
-                    <li class="splide__slide">
-                        <h1 class="splide__header header"><span class="header__title">daytona pro</span></h1>
+        <div class="car-wrapper">
 
-
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description"></span></h2>
-
-                        <img src="assets/kolpaki/argo/daytona_pro.png">
-
-                    </li>
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header"><span class="header__title">giga</span></h1>
-                        <h2 class="splide__sub-header header">
-                            <span class="visiblity"> 1</span><span class="header__description"></span>
-                        </h2>
-
-                        <img src="assets/kolpaki/argo/giga.png">
-
-                    </li>
-
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header"><span class="header__title">giga black</span></h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description">black</span></h2>
-                        <img src="assets/kolpaki/argo/giga_black.png">
-
-                    </li>
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header"><span class="header__title">giga dark</span></h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description">dark</span></h2>
-                        <img src="assets/kolpaki/argo/giga_dark.png">
-                    </li>
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header"><span class="header__title">intenso</span></h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description"></span></h2>
-                        <img src="assets/kolpaki/argo/inteso.png">
-
-                    </li>
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header"><span class="header__title">mega</span></h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description"></span></h2>
-                        <img src="assets/kolpaki/argo/mega.png">
-
-                    </li>
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header"><span class="header__title">opus</span></h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description"></span></h2>
-                        <img src="assets/kolpaki/argo/opus.png">
-
-                    </li>
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header"><span class="header__title">speed</span></h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span></span></h2>
-                        <img src="assets/kolpaki/argo/speed.png">
-
-                    </li>
-                    <li class="splide__slide">
-
-                        <h1 class="splide__header header">tino</h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description"></span></h2>
-                        <img src="assets/kolpaki/argo/tino.png">
-
-                    </li>
-
-                </ul>
-                <ul class="splide__list racing is-hidden">
-                    <li class="splide__slide">
-                        <h1 class="splide__header header">4racing</h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description">1</span></h2>
-                        <img src="assets/kolpaki/4racing/avalon_carbon.png" class="splide__image">
-                    </li>
-                </ul>
-                <ul class="splide__list jtac is-hidden">
-                    <li class="splide__slide">
-                        <h1 class="splide__header header">jtec</h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description">2</span></h2>
-
-                        <img src="assets/kolpaki/jtac/barracuda.png" class="splide__image">
-                    </li>
-                </ul>
-                <ul class="splide__list max6 is-hidden">
-                    <li class="splide__slide">
-                        <h1 class="splide__header header">max6</h1>
-                        <h2 class="splide__sub-header header"><span class="visiblity"> 1</span><span
-                                class="header__description">3</span></h2>
-
-                        <img src="assets/kolpaki/max6/Avalon_Chrome_Black_13_14.png" class="splide__image">
-                    </li>
-                </ul>
-            </div>
+                <nav class="car-menu">
+                        <ul class="car-menu__model-list visiblity">
+                                <li class="car-menu__li"><img src="assets//menu/bmw.png" alt="" data-car-type="bmw"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/menu/mazda_sedan.png" alt=""
+                                                data-car-type="mazda" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets//menu/mazda_kombi.png" alt=""
+                                                data-car-type="mazda_wagon" class="car-menu__li-img">
+                                </li>
+                                <li class="car-menu__li"><img src="assets//menu/mercedes.png" alt=""
+                                                data-car-type="mercedes" class="car-menu__li-img">
+                                </li>
+                                <li class="car-menu__li"><img src="assets//menu/range.png" alt="" data-car-type="range"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets//menu/vw.png" alt="" data-car-type="vw"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets//menu/fiat.png" alt="" data-car-type="fiat"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets//menu/van.png" alt="" data-car-type="van"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets//menu/minibus.png" alt=""
+                                                data-car-type="minibus" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets//menu/bus.png" alt=""
+                                                data-car-type="bus_scania" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets//menu/truck.png" alt="" data-car-type="truck"
+                                                class="car-menu__li-img"></li>
+                        </ul>
+                        <ul class="car-menu__color-list is-hidden">
+                                <li class="car-menu__li"><img src="assets/kolory/white.png" alt=""
+                                                data-color-type="white" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/silver.png" alt=""
+                                                data-color-type="silver" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/black.png" alt=""
+                                                data-color-type="black" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/gold.png" alt="" data-color-type="gold"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/red.png" alt="" data-color-type="red"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/orange.png" alt=""
+                                                data-color-type="orange" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/yellow.png" alt=""
+                                                data-color-type="yellow" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/pink.png" alt="" data-color-type="pink"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/violet.png" alt=""
+                                                data-color-type="violet" class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/blue.png" alt="" data-color-type="blue"
+                                                class="car-menu__li-img"></li>
+                                <li class="car-menu__li"><img src="assets/kolory/green.png" alt=""
+                                                data-color-type="green" class="car-menu__li-img"></li>
+                        </ul>
+                </nav>
+                <main class="car car--size-default">
+                        <img src="assets/auto/bmw/black.png" class="car__img">
+                        <div class="car__hubcap car--hubcap-front"></div>
+                        <div class="car__hubcap car--hubcap-back"></div>
+                        <img src="assets/logo/gorecki-kopia.png" alt="górecki logo" class="logo">
+                        <ul class="background-menu">
+                                <li class="background-menu__element"><img src="assets/tlo_1.png"
+                                                class="background-menu__image"></li>
+                                <li class="background-menu__element"><img src="assets/tlo_2.png"
+                                                class="background-menu__image"></li>
+                                <li class="background-menu__element"><img src="assets/tlo_3.png"
+                                                class="background-menu__image"></li>
+                        </ul>
+                </main>
         </div>
-        <div class="info__logo-wrapper"><img src="assets/logo/4racing.png" alt="" class="info__logo"></div>
-        <div class="description">
-            <div class="description--flex">
-                <h1 class="description__header">avalon carbon</h1>
-            </div>
-            <div class="description--flex">
-                <h2 class="description__color">silver & black</h2>
-            </div>
-            <div class="description--flex description--background">
-                <h3 class="description__size">13" 14" 15" 16"</h3>
-            </div>
-        </div>
-    </section>
-    <footer class="footer">
-        <h3>Created by <span class="footer__name">Dawid</span> <span class="footer__surname">Spisak</span></h3>
-    </footer>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script> -->
-    <script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            new Splide('.splide', {
-                perPage: 5,
-                perMove: 1,
-                // cover: true,
-                breakpoints: {
-                    500: {
-                        perPage: 2,
-                    },
-                    640: {
-                        perPage: 3,
-                    },
-                    780: {
-                        perPage: 3,
-                    }
-                }
-            }).mount();
+        <section class="info">
+                <div class="splide argo" id="a">
+                        <div class="splide__track">
+                                <ul class="splide__list">
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">avalone
+                                                                pro</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
 
-        });
-    </script>
-    <script src="js/main.js"></script>
-    <script src="js/index.js"></script>
+                                                <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+                                                        data-model-name="avalone_pro">
+                                        </li>
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">daytona
+                                                                pro</span></h1>
+
+
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+
+                                                <img src="assets/kolpaki/argo/daytona_pro.png" class="splide__image"
+                                                        data-model-name="daytona_pro">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span
+                                                                class="header__title">giga</span></h1>
+                                                <h2 class="splide__sub-header header">
+                                                        <span class="visiblity"> 1</span><span
+                                                                class="header__description"></span>
+                                                </h2>
+
+                                                <img src="assets/kolpaki/argo/giga.png" class="splide__image"
+                                                        data-model-name="giga">
+
+                                        </li>
+
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span class="header__title">giga
+                                                                black</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description">black</span>
+                                                </h2>
+                                                <img src="assets/kolpaki/argo/giga_black.png" class="splide__image"
+                                                        data-model-name="giga_black">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span class="header__title">giga
+                                                                dark</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description">dark</span>
+                                                </h2>
+                                                <img src="assets/kolpaki/argo/giga_dark.png" class="splide__image"
+                                                        data-model-name="giga_dark">
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span
+                                                                class="header__title">intenso</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+                                                <img src="assets/kolpaki/argo/inteso.png" class="splide__image"
+                                                        data-model-name="inteso">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span
+                                                                class="header__title">mega</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+                                                <img src="assets/kolpaki/argo/mega.png" class="splide__image"
+                                                        data-model-name="mega">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span
+                                                                class="header__title">opus</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+                                                <img src="assets/kolpaki/argo/opus.png" class="splide__image"
+                                                        data-model-name="opus">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span
+                                                                class="header__title">speed</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span></span></h2>
+                                                <img src="assets/kolpaki/argo/speed.png" class="splide__image"
+                                                        data-model-name="speed">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header">tino</h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+                                                <img src="assets/kolpaki/argo/tino.png" class="splide__image"
+                                                        data-model-name="tino">
+
+                                        </li>
+
+                                </ul>
+
+                        </div>
+                </div>
+                <div class="splide racing is-hidden" id="b">
+                        <div class="splide__track">
+                                <ul class="splide__list argo">
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">
+                                                                avalon carbon
+                                                        </span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description">
+                                                                silver & black
+                                                        </span></h2>
+
+                                                <img src="assets/kolpaki/4racing/avalon_carbon_silver_black.png"
+                                                        class="splide__image"
+                                                        data-model-name="avalon_carbon_silver_black">
+                                        </li>
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">
+                                                                avalon carbon
+                                                        </span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description">
+
+                                                        </span></h2>
+
+                                                <img src="assets/kolpaki/4racing/avalon_carbon.png"
+                                                        class="splide__image" data-model-name="avalon_carbon">
+                                        </li>
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">
+                                                                avalon
+                                                        </span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description">
+                                                                silver & black
+                                                        </span></h2>
+
+                                                <img src="assets/kolpaki/4racing/avalon_silver_black.png"
+                                                        class="splide__image" data-model-name="avalon_silver_black">
+                                        </li>
+                                </ul>
+
+                        </div>
+                </div>
+                <div class="splide jtac is-hidden" id="c">
+                        <div class="splide__track">
+                                <ul class="splide__list argo">
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">avalone
+                                                                pro</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+
+                                                <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+                                                        data-model-name="avalone_pro">
+                                        </li>
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">daytona
+                                                                pro</span></h1>
+
+
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+
+                                                <img src="assets/kolpaki/argo/daytona_pro.png" class="splide__image"
+                                                        data-model-name="daytona_pro">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span
+                                                                class="header__title">giga</span></h1>
+                                                <h2 class="splide__sub-header header">
+                                                        <span class="visiblity"> 1</span><span
+                                                                class="header__description"></span>
+                                                </h2>
+
+                                                <img src="assets/kolpaki/argo/giga.png" class="splide__image"
+                                                        data-model-name="giga">
+
+                                        </li>
+
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span class="header__title">giga
+                                                                black</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description">black</span>
+                                                </h2>
+                                                <img src="assets/kolpaki/argo/giga_black.png" class="splide__image"
+                                                        data-model-name="giga_black">
+
+                                        </li>
+                                </ul>
+                        </div>
+                </div>
+                <div class="splide max6 is-hidden" id="d">
+                        <div class="splide__track">
+                                <ul class="splide__list argo">
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">avalone
+                                                                pro</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+
+                                                <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+                                                        data-model-name="avalone_pro">
+                                        </li>
+                                        <li class="splide__slide">
+                                                <h1 class="splide__header header"><span class="header__title">daytona
+                                                                pro</span></h1>
+
+
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description"></span></h2>
+
+                                                <img src="assets/kolpaki/argo/daytona_pro.png" class="splide__image"
+                                                        data-model-name="daytona_pro">
+
+                                        </li>
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span
+                                                                class="header__title">giga</span></h1>
+                                                <h2 class="splide__sub-header header">
+                                                        <span class="visiblity"> 1</span><span
+                                                                class="header__description"></span>
+                                                </h2>
+
+                                                <img src="assets/kolpaki/argo/giga.png" class="splide__image"
+                                                        data-model-name="giga">
+
+                                        </li>
+
+                                        <li class="splide__slide">
+
+                                                <h1 class="splide__header header"><span class="header__title">giga
+                                                                black</span></h1>
+                                                <h2 class="splide__sub-header header"><span class="visiblity">
+                                                                1</span><span class="header__description">black</span>
+                                                </h2>
+                                                <img src="assets/kolpaki/argo/giga_black.png" class="splide__image"
+                                                        data-model-name="giga_black">
+
+                                        </li>
+                                </ul>
+
+                        </div>
+                </div>
+                <div class="info__logo-wrapper"><img src="assets/logo/argo.png" alt="" class="info__logo"></div>
+                <div class="description">
+                        <div class="description--flex">
+                                <h1 class="description__header">avalon carbon</h1>
+                        </div>
+                        <div class="description--flex">
+                                <h2 class="description__color">silver & black</h2>
+                        </div>
+                        <div class="description--flex description--background">
+                                <h3 class="description__size">13" 14" 15" 16"</h3>
+                        </div>
+                </div>
+        </section>
+        <footer class="footer">
+                <h3>Created by <span class="footer__name">Dawid</span> <span class="footer__surname">Spisak</span></h3>
+        </footer>
+        <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script> -->
+        <script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
+        <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                        const a = new Splide('#a', {
+                                perPage: 5,
+                                perMove: 1,
+                                // cover: true,
+                                breakpoints: {
+                                        500: {
+                                                perPage: 2,
+                                        },
+                                        640: {
+                                                perPage: 3,
+                                        },
+                                        780: {
+                                                perPage: 3,
+                                        }
+                                }
+                        }).mount();
+
+                });
+        </script>
+        <script src="js/main.js"></script>
+        <script src="js/index.js"></script>
 
 </body>
 
