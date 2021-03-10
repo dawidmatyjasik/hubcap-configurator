@@ -1,5 +1,3 @@
-console.log("test");
-
 const handleMenu = () => {
     const list = document.querySelectorAll('.settings li');
     const carModelList = document.querySelector('.car-menu__model-list');
@@ -15,28 +13,49 @@ const handleMenu = () => {
                 if (carModelList.classList.contains('is-hidden')) {
                     carModelList.classList.remove('is-hidden');
                     carColorList.classList.add('is-hidden');
-                    carMenu.style.backgroundColor = "white";
-                    carWrapper.style.paddingLeft = "10vw"
+                    carModelList.classList.add('car-menu--slide-in')
+                    carModelList.classList.remove('car-menu--slide-out')
+                    carWrapper.classList.add('background--slide-in')
+                    carWrapper.classList.remove('background--slide-out')
                 } else {
-                    carModelList.classList.add('is-hidden');
-                    carColorList.classList.add('is-hidden');
-                    carMenu.style.backgroundColor = "transparent"
-                    carWrapper.style.paddingLeft = "0"
+                    carModelList.classList.remove('car-menu--slide-in')
+                    carModelList.classList.add('car-menu--slide-out')
+                    carWrapper.classList.add('background--slide-out')
+                    carWrapper.classList.remove('background--slide-in')
+
+                    setTimeout(() => {
+                        carModelList.classList.add('is-hidden');
+                        carColorList.classList.add('is-hidden');
+                    }, 500);
+
                 }
             } else if (li.dataset.listType === "colors") {
                 if (carColorList.classList.contains('is-hidden')) {
                     carColorList.classList.remove('is-hidden');
                     carModelList.classList.add('is-hidden');
-                    carMenu.style.backgroundColor = "white";
-                    carWrapper.style.paddingLeft = "10vw"
+                    carColorList.classList.add('car-menu--slide-in')
+                    carColorList.classList.remove('car-menu--slide-out')
+                    carWrapper.classList.add('background--slide-in')
+                    carWrapper.classList.remove('background--slide-out')
                 } else {
-                    carColorList.classList.add('is-hidden');
-                    carModelList.classList.add('is-hidden');
-                    carMenu.style.backgroundColor = "transparent"
-                    carWrapper.style.paddingLeft = "0"
+                    carColorList.classList.remove('car-menu--slide-in')
+                    carColorList.classList.add('car-menu--slide-out')
+                    carWrapper.classList.add('background--slide-out')
+                    carWrapper.classList.remove('background--slide-in')
+                    setTimeout(() => {
+                        carColorList.classList.add('is-hidden');
+                        carModelList.classList.add('is-hidden');
+                    }, 500);
+
                 }
             } else if (li.dataset.listType === "company") {
-                navigation.classList.toggle('visibility');
+                if (navigation.classList.contains('navigation--slide-out')) {
+                    navigation.classList.remove('navigation--slide-out')
+                    navigation.classList.add('navigation--slide-in')
+                } else if (navigation.classList.contains('navigation--slide-in')) {
+                    navigation.classList.remove('navigation--slide-in')
+                    navigation.classList.add('navigation--slide-out')
+                }
 
             }
         })
@@ -313,13 +332,29 @@ const handleBackgroundChange = () => {
 
     });
 }
+const handleAnimations = () => {
+    /*     const company = document.querySelector(`[data-list-type="company"]`)
+        const navigation = document.querySelector('.navigation');
+        company.addEventListener('click', () => {
+            if (navigation.classList.contains('navigation--slide-out')) {
+                navigation.classList.remove('navigation--slide-out')
+                navigation.classList.add('navigation--slide-in')
+            } else if (navigation.classList.contains('navigation--slide-in')) {
+                navigation.classList.remove('navigation--slide-in')
+                navigation.classList.add('navigation--slide-out')
+            }
+        })
+     */
+
+
+}
 handleMenu()
 handleWindowSize()
 handleCarMenu()
 handleRimMenu()
 handleRimChange()
 handleBackgroundChange()
-
+handleAnimations()
 
 
 

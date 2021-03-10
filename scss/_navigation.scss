@@ -15,6 +15,7 @@ nav{
     grid-template-columns: repeat(4, 1fr);
     margin-right: 2vw;
     background-color: #cccccc;
+    height: 10vh;
     &__logo{
         display: inline-grid;
          place-items: center;
@@ -41,7 +42,7 @@ nav{
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     margin-right: 2vw;
-    // height: 10vh;
+    height: 10vh;
     padding-left: 2vw;
     margin-right: 2vw;
     &__logo{
@@ -50,10 +51,9 @@ nav{
          
     }
     &__photo{
-        width: 50%;
+        width: 60%;
         height: 100%;
         object-fit: contain;
         cursor: pointer;
     }
 }
-
