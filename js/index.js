@@ -173,25 +173,25 @@ const handleRimMenu = () => {
 
         });
     }
-    document.addEventListener('DOMContentLoaded', () => {
-        const a = new Splide('#a', {
-            perPage: 5,
-            perMove: 1,
-            // cover: true,
-            breakpoints: {
-                500: {
-                    perPage: 2,
-                },
-                640: {
-                    perPage: 3,
-                },
-                780: {
-                    perPage: 3,
-                }
-            }
-        }).mount();
 
+
+    const a = new Splide('#a', {
+        perPage: 5,
+        perMove: 1,
+        // cover: true,
+        breakpoints: {
+            500: {
+                perPage: 2,
+            },
+            640: {
+                perPage: 3,
+            },
+            780: {
+                perPage: 3,
+            }
+        }
     });
+
     const pickCompany = (e) => {
         const origin = e.target;
         const b = new Splide('#b', {
@@ -245,6 +245,7 @@ const handleRimMenu = () => {
             jtac.classList.add('is-hidden')
             max6.classList.add('is-hidden')
             logo.src = "assets/logo/argo.png"
+            a.mount();
         }
         else if (origin.dataset.companyName === "4racing") {
             argo.classList.add('is-hidden')
@@ -286,13 +287,15 @@ const handleRimChange = () => {
         model: `avalone_pro`
     }
 
+
     const pickCompany = (e) => {
         const origin = e.target;
         src.company = origin.dataset.companyName;
-        console.log(src);
     }
     const pickModel = (e) => {
         const origin = e.target;
+        console.log(origin);
+
         const header = document.querySelector('.description__header');
         const color = document.querySelector('.description__color');
         const size = document.querySelector('.description__size');
@@ -312,18 +315,166 @@ const handleRimChange = () => {
         li.addEventListener('click', pickModel)
     })
 }
+
+/* const handleFetch = () => {
+    const argoList = document.querySelector('.argo-list')
+    const racingList = document.querySelector('.racing-list')
+    const argo = document.querySelectorAll('.argo-list li')
+
+    const hubcaps = document.querySelectorAll('.car__hubcap')
+    const list = document.querySelectorAll('.navigation__photo')
+    const menu = document.querySelectorAll('.splide__image')
+    const getData = () => {
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                data.argo.forEach(({ header, color, size, path, id }) => {
+                    argoList.innerHTML += `
+                  <li class="splide__slide">
+                  <h1 class="splide__header header"><span class="header__title">${header}
+                  </span></h1>
+                  <h2 class="splide__sub-header header"><span class="visiblity">
+                  1</span><span class="header__description">${color}</span></h2>
+                  <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+                  data-model-name="${header}" 
+                  data-model-header="${path}"
+                  data-model-color="${color}"
+                  data-model-size='${size} '>
+                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                  </li> 
+                  `;
+                });
+                data.racing.forEach(({ header, color, size, path, id }) => {
+                    racingList.innerHTML += `
+                 <li class="splide__slide">
+                 <h1 class="splide__header header"><span class="header__title">${header}
+                 </span></h1>
+                 <h2 class="splide__sub-header header"><span class="visiblity">
+                 1</span><span class="header__description">${color}</span></h2>
+                 <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+                 data-model-name="${header}" 
+                 data-model-header="${path}"
+                 data-model-color="${color}"
+                 data-model-size='${size} '>
+                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                 </li> 
+                 `;
+                });
+                new Splide('#a', {
+                    perPage: 5,
+                    perMove: 1,
+                    // cover: true,
+                    breakpoints: {
+                        500: {
+                            perPage: 2,
+                        },
+                        640: {
+                            perPage: 3,
+                        },
+                        780: {
+                            perPage: 3,
+                        }
+                    }
+                }).mount();
+            });
+    }
+
+    window.addEventListener('load', getData)
+
+
+} */
+const createSplide = () => {
+    new Splide('#a', {
+        perPage: 5,
+        perMove: 1,
+        breakpoints: {
+            500: {
+                perPage: 2,
+            },
+            640: {
+                perPage: 3,
+            },
+            780: {
+                perPage: 3,
+            }
+        }
+    }).mount();
+}
+async function getData() {
+    const url = '../data.json';
+    try {
+        const res = await fetch(url);
+        return await res.json();
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+async function renderUsers() {
+    const data = await getData();
+    let argo = '';
+    let racing = '';
+    let argoList = document.querySelector('.argo-list');
+    let racingList = document.querySelector('.racing-list');
+    console.log(data);
+
+    data.argo.forEach(data => {
+        let htmlSegment = `
+        <li class="splide__slide">
+        <h1 class="splide__header header"><span class="header__title">${data.header}
+        </span></h1>
+        <h2 class="splide__sub-header header"><span class="visiblity">
+        1</span><span class="header__description">${data.color}</span></h2>
+        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        data-model-name="${data.path}" 
+        data-model-header="${data.header}"
+        data-model-color="${data.color}"
+        data-model-size='${data.size} '>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </li> 
+        `;
+        argo += htmlSegment;
+    });
+    data.racing.forEach(data => {
+        let htmlSegment = `
+        <li class="splide__slide">
+        <h1 class="splide__header header"><span class="header__title">${data.header}
+        </span></h1>
+        <h2 class="splide__sub-header header"><span class="visiblity">
+        1</span><span class="header__description">${data.color}</span></h2>
+        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        data-model-name="${data.path}" 
+        data-model-header="${data.header}"
+        data-model-color="${data.color}"
+        data-model-size='${data.size} '>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </li> 
+        `;
+        racing += htmlSegment;
+    });
+
+
+    // console.log(document.querySelectorAll('.splide__list li'));
+
+    argoList.innerHTML = argo;
+    racingList.innerHTML = racing;
+    createSplide()
+}
+
+
+
 const handleBackgroundChange = () => {
     const backgroundImages = document.querySelectorAll('.background-menu__image')
     changeBackground = (e) => {
         const origin = e.target
         const background = document.querySelector('.car-wrapper')
         if (origin.dataset.background === "tlo_4") {
-            background.style.backgroundImage = `url('../assets/${origin.dataset.background}.png')`
+            background.style.backgroundImage = `url('./assets/${origin.dataset.background}.png')`
 
         } else if (origin.dataset.background === "tlo_2") {
-            background.style.backgroundImage = `url('../assets/${origin.dataset.background}.png')`
+            background.style.backgroundImage = `url('./assets/${origin.dataset.background}.png')`
         } else if (origin.dataset.background === "tlo_3") {
-            background.style.backgroundImage = `url('../assets/${origin.dataset.background}.png')`
+            background.style.backgroundImage = `url('./assets/${origin.dataset.background}.png')`
         }
     }
 
@@ -332,30 +483,15 @@ const handleBackgroundChange = () => {
 
     });
 }
-const handleAnimations = () => {
-    /*     const company = document.querySelector(`[data-list-type="company"]`)
-        const navigation = document.querySelector('.navigation');
-        company.addEventListener('click', () => {
-            if (navigation.classList.contains('navigation--slide-out')) {
-                navigation.classList.remove('navigation--slide-out')
-                navigation.classList.add('navigation--slide-in')
-            } else if (navigation.classList.contains('navigation--slide-in')) {
-                navigation.classList.remove('navigation--slide-in')
-                navigation.classList.add('navigation--slide-out')
-            }
-        })
-     */
-
-
-}
+renderUsers().then(r => {
+    handleRimChange()
+});
 handleMenu()
 handleWindowSize()
 handleCarMenu()
 handleRimMenu()
-handleRimChange()
-handleBackgroundChange()
-handleAnimations()
 
+handleBackgroundChange()
 
 
 
