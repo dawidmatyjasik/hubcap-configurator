@@ -173,12 +173,9 @@ const handleRimMenu = () => {
 
         });
     }
-
-
     const a = new Splide('#a', {
         perPage: 5,
         perMove: 1,
-        // cover: true,
         breakpoints: {
             500: {
                 perPage: 2,
@@ -315,7 +312,6 @@ const handleRimChange = () => {
         li.addEventListener('click', pickModel)
     })
 }
-
 /* const handleFetch = () => {
     const argoList = document.querySelector('.argo-list')
     const racingList = document.querySelector('.racing-list')
@@ -412,10 +408,15 @@ async function getData() {
 
 async function renderUsers() {
     const data = await getData();
+    const argoList = document.querySelector('.argo-list');
+    const racingList = document.querySelector('.racing-list');
+    const jtacList = document.querySelector('.jtac-list');
+    const maxList = document.querySelector('.max-list');
     let argo = '';
     let racing = '';
-    let argoList = document.querySelector('.argo-list');
-    let racingList = document.querySelector('.racing-list');
+    let jtac = '';
+    let max = '';
+
     console.log(data);
 
     data.argo.forEach(data => {
@@ -452,12 +453,44 @@ async function renderUsers() {
         `;
         racing += htmlSegment;
     });
-
-
-    // console.log(document.querySelectorAll('.splide__list li'));
-
+    data.jtac.forEach(data => {
+        let htmlSegment = `
+        <li class="splide__slide">
+        <h1 class="splide__header header"><span class="header__title">${data.header}
+        </span></h1>
+        <h2 class="splide__sub-header header"><span class="visiblity">
+        1</span><span class="header__description">${data.color}</span></h2>
+        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        data-model-name="${data.path}" 
+        data-model-header="${data.header}"
+        data-model-color="${data.color}"
+        data-model-size='${data.size} '>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </li> 
+        `;
+        jtac += htmlSegment;
+    });
+    data.max.forEach(data => {
+        let htmlSegment = `
+        <li class="splide__slide">
+        <h1 class="splide__header header"><span class="header__title">${data.header}
+        </span></h1>
+        <h2 class="splide__sub-header header"><span class="visiblity">
+        1</span><span class="header__description">${data.color}</span></h2>
+        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        data-model-name="${data.path}" 
+        data-model-header="${data.header}"
+        data-model-color="${data.color}"
+        data-model-size='${data.size} '>
+        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </li> 
+        `;
+        max += htmlSegment;
+    });
     argoList.innerHTML = argo;
     racingList.innerHTML = racing;
+    jtacList.innerHTML = jtac;
+    maxList.innerHTML = max;
     createSplide()
 }
 

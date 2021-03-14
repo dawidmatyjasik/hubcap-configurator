@@ -4,42 +4,42 @@
             "header": "advance",
             "color": "",
             "path": "advance",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "1"
         },
         {
             "header": "alabama",
             "color": "",
             "path": "alabama",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "2"
         },
         {
             "header": "advance",
             "color": "",
             "path": "advance",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "1"
         },
         {
             "header": "alabama",
             "color": "",
             "path": "alabama",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "2"
         },
         {
             "header": "advance",
             "color": "",
             "path": "advance",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "1"
         },
         {
             "header": "alabama",
             "color": "",
             "path": "alabama",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "2"
         }
     ],
@@ -48,43 +48,61 @@
             "header": "avalon carbon",
             "color": "silver & black",
             "path": "avalon_carbon_silver_black",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "1"
         },
         {
             "header": "avalon carbon",
             "color": "",
             "path": "avalon_carbon",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "2"
         },
         {
             "header": "avalon carbon",
             "color": "silver & black",
             "path": "avalon_carbon_silver_black",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "1"
         },
         {
             "header": "avalon carbon",
             "color": "",
             "path": "avalon_carbon",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "2"
         },
         {
             "header": "avalon carbon",
             "color": "silver & black",
             "path": "avalon_carbon_silver_black",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "1"
         },
         {
             "header": "avalon carbon",
             "color": "",
             "path": "avalon_carbon",
-            "size": "13 14 15 16",
+            "size": "13\" 14\" 15\" 16\"",
             "id": "2"
+        }
+    ],
+    "jtac": [
+        {
+            "header": "barracuda",
+            "color": "",
+            "path": "barracuda",
+            "size": "13\" 14\" 15\" 16\"",
+            "id": "1"
+        }
+    ],
+    "max": [
+        {
+            "header": "avalon chrome",
+            "color": "black",
+            "path": "avalon_chrome_back",
+            "size": "13\" 14\" 15\" 16\"",
+            "id": "1"
         }
     ]
 }
