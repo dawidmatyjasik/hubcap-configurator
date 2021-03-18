@@ -81,15 +81,19 @@ const handleWindowSize = () => {
     window.addEventListener('resize', reportWindowSize);
 
 }
-
+let choices = {
+    carChoice: "bmw",
+    colorChoice: "black",
+    background: 'tlo_1',
+};
 const handleCarMenu = () => {
     const carImg = document.querySelector('.car__img');
     const car = document.querySelector('.car');
     const list = document.querySelectorAll('.car-menu__li-img')
-    let choices = {
+    /* let choices = {
         carChoice: "bmw",
         colorChoice: "black",
-    };
+    }; */
     const resetCarValues = () => {
         const car = document.querySelector('.car');
         car.classList.remove('car--size-default',
@@ -397,7 +401,7 @@ const createSplide = () => {
     }).mount();
 }
 async function getData() {
-    const url = '../data.json';
+    const url = './data.json';
     try {
         const res = await fetch(url);
         return await res.json();
@@ -426,12 +430,12 @@ async function renderUsers() {
         </span></h1>
         <h2 class="splide__sub-header header"><span class="visiblity">
         1</span><span class="header__description">${data.color}</span></h2>
-        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        <img src="assets/kolpaki/argo/${data.path}.png" class="splide__image"
         data-model-name="${data.path}" 
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/argo/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
         argo += htmlSegment;
@@ -443,12 +447,12 @@ async function renderUsers() {
         </span></h1>
         <h2 class="splide__sub-header header"><span class="visiblity">
         1</span><span class="header__description">${data.color}</span></h2>
-        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        <img src="assets/kolpaki/4racing/${data.path}.png" class="splide__image"
         data-model-name="${data.path}" 
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/4racing/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
         racing += htmlSegment;
@@ -460,14 +464,16 @@ async function renderUsers() {
         </span></h1>
         <h2 class="splide__sub-header header"><span class="visiblity">
         1</span><span class="header__description">${data.color}</span></h2>
-        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        <img src="assets/kolpaki/jtac/${data.path}.png" class="splide__image"
         data-model-name="${data.path}" 
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/jtac/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
+        console.log("tutaj nie działa ikonka add, ponieważ zmieniłem src w katalogu roboczym");
+
         jtac += htmlSegment;
     });
     data.max.forEach(data => {
@@ -477,12 +483,12 @@ async function renderUsers() {
         </span></h1>
         <h2 class="splide__sub-header header"><span class="visiblity">
         1</span><span class="header__description">${data.color}</span></h2>
-        <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
+        <img src="assets/kolpaki/max6/${data.path}.png" class="splide__image"
         data-model-name="${data.path}" 
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/max6/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
         max += htmlSegment;
@@ -502,12 +508,15 @@ const handleBackgroundChange = () => {
         const origin = e.target
         const background = document.querySelector('.car-wrapper')
         if (origin.dataset.background === "tlo_4") {
-            background.style.backgroundImage = `url('./assets/${origin.dataset.background}.png')`
-
+            choices.background = 'tlo_4'
+            background.style.backgroundImage = `url('./assets/${choices.background}.png')`
         } else if (origin.dataset.background === "tlo_2") {
-            background.style.backgroundImage = `url('./assets/${origin.dataset.background}.png')`
+            choices.background = 'tlo_2'
+            background.style.backgroundImage = `url('./assets/${choices.background}.png')`
+
         } else if (origin.dataset.background === "tlo_3") {
-            background.style.backgroundImage = `url('./assets/${origin.dataset.background}.png')`
+            choices.background = 'tlo_3'
+            background.style.backgroundImage = `url('./assets/${choices.background}.png')`
         }
     }
 
@@ -516,6 +525,18 @@ const handleBackgroundChange = () => {
 
     });
 }
+
+/* const toggleOrientation = () => {
+
+    window.addEventListener('resize', () => {
+
+        if (window.innerWidth < window.innerHeight) {
+            document.body.classList.toggle('is-hidden');
+        } else {
+            document.body.classList.toggle('is-hidden');
+        }
+    });
+} */
 renderUsers().then(r => {
     handleRimChange()
 });

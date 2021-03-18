@@ -303,6 +303,9 @@ nav {
   width: calc((var(--d) / var(--w)) * 100%);
   height: calc((var(--d) / var(--h)) * 100%);
   background-image: url("../assets/kolpaki_bez_opon/argo/avalone_pro.png");
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
   background-position: center;
   background-size: cover;
   border-style: solid;
@@ -446,6 +449,11 @@ ul.splide__pagination {
   visibility: hidden;
 }
 
+/* body{
+    @media (orientation: portrait) {
+        display: none;
+    }
+} */
 .info {
   -ms-flex-preferred-size: 18vh;
       flex-basis: 18vh;
@@ -551,6 +559,16 @@ ul.splide__pagination {
 
 .footer__surname {
   color: #23527c;
+}
+
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+
+.fa-plus-circle {
+  text-decoration: none;
+  color: black;
 }
 
 .animation-wrapper {
