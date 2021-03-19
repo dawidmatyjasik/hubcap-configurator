@@ -298,7 +298,7 @@ nav {
 }
 
 .car--size-default {
-  --d: 4;
+  --d: 4.1;
   --lf: 6.38;
   --rb: 7.5;
   --bf: 2.45;
@@ -310,7 +310,7 @@ nav {
 .car--size-mercedes {
   --d: 4;
   --lf: 6.38;
-  --rb: 8.55;
+  --rb: 8.6;
   --bf: 2.45;
   --bb: 2.45;
   --w: 30;
@@ -321,8 +321,8 @@ nav {
   --d: 4.4;
   --lf: 6.38;
   --rb: 8.33;
-  --bf: 2.45;
-  --bb: 2.45;
+  --bf: 2.55;
+  --bb: 2.55;
   --w: 30;
   --h: 11;
 }
@@ -338,19 +338,29 @@ nav {
 }
 
 .car--size-fiat {
-  --d: 3.3;
+  --d: 3.4;
   --lf: 6.38;
-  --rb: 9.65;
-  --bf: 2.35;
-  --bb: 2.35;
+  --rb: 9.7;
+  --bf: 2.3;
+  --bb: 2.3;
   --w: 30;
   --h: 11;
 }
 
 .car--size-van {
-  --d: 2.9;
+  --d: 3.1;
   --lf: 5.95;
-  --rb: 8.53;
+  --rb: 8.55;
+  --bf: 2.15;
+  --bb: 2.15;
+  --w: 30;
+  --h: 11;
+}
+
+.car--size-mini-bus {
+  --d: 3.1;
+  --lf: 5.75;
+  --rb: 8.57;
   --bf: 2.15;
   --bb: 2.15;
   --w: 30;
@@ -528,11 +538,6 @@ ul.splide__pagination {
   visibility: hidden;
 }
 
-/* body{
-    @media (orientation: portrait) {
-        display: none;
-    }
-} */
 .info {
   -ms-flex-preferred-size: 18vh;
       flex-basis: 18vh;

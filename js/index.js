@@ -102,6 +102,7 @@ const handleCarMenu = () => {
             'car--size-vw',
             'car--size-fiat',
             'car--size-van',
+            'car--size-mini-bus',
             'car--size-bus',
             'car--size-truck')
     }
@@ -147,7 +148,7 @@ const handleCarMenu = () => {
         }
         else if (origin.dataset.carType === "minibus") {
             resetCarValues()
-            car.classList.add('car--size-van')
+            car.classList.add('car--size-mini-bus')
         }
         else if (origin.dataset.carType === "bus_scania") {
             resetCarValues()
@@ -316,73 +317,6 @@ const handleRimChange = () => {
         li.addEventListener('click', pickModel)
     })
 }
-/* const handleFetch = () => {
-    const argoList = document.querySelector('.argo-list')
-    const racingList = document.querySelector('.racing-list')
-    const argo = document.querySelectorAll('.argo-list li')
-
-    const hubcaps = document.querySelectorAll('.car__hubcap')
-    const list = document.querySelectorAll('.navigation__photo')
-    const menu = document.querySelectorAll('.splide__image')
-    const getData = () => {
-        fetch('data.json')
-            .then(response => response.json())
-            .then(data => {
-                data.argo.forEach(({ header, color, size, path, id }) => {
-                    argoList.innerHTML += `
-                  <li class="splide__slide">
-                  <h1 class="splide__header header"><span class="header__title">${header}
-                  </span></h1>
-                  <h2 class="splide__sub-header header"><span class="visiblity">
-                  1</span><span class="header__description">${color}</span></h2>
-                  <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
-                  data-model-name="${header}" 
-                  data-model-header="${path}"
-                  data-model-color="${color}"
-                  data-model-size='${size} '>
-                  <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                  </li> 
-                  `;
-                });
-                data.racing.forEach(({ header, color, size, path, id }) => {
-                    racingList.innerHTML += `
-                 <li class="splide__slide">
-                 <h1 class="splide__header header"><span class="header__title">${header}
-                 </span></h1>
-                 <h2 class="splide__sub-header header"><span class="visiblity">
-                 1</span><span class="header__description">${color}</span></h2>
-                 <img src="assets/kolpaki/argo/avalone_pro.png" class="splide__image"
-                 data-model-name="${header}" 
-                 data-model-header="${path}"
-                 data-model-color="${color}"
-                 data-model-size='${size} '>
-                 <i class="fa fa-plus-circle" aria-hidden="true"></i>
-                 </li> 
-                 `;
-                });
-                new Splide('#a', {
-                    perPage: 5,
-                    perMove: 1,
-                    // cover: true,
-                    breakpoints: {
-                        500: {
-                            perPage: 2,
-                        },
-                        640: {
-                            perPage: 3,
-                        },
-                        780: {
-                            perPage: 3,
-                        }
-                    }
-                }).mount();
-            });
-    }
-
-    window.addEventListener('load', getData)
-
-
-} */
 const createSplide = () => {
     new Splide('#a', {
         perPage: 5,
@@ -499,9 +433,6 @@ async function renderUsers() {
     maxList.innerHTML = max;
     createSplide()
 }
-
-
-
 const handleBackgroundChange = () => {
     const backgroundImages = document.querySelectorAll('.background-menu__image')
     changeBackground = (e) => {
@@ -525,7 +456,6 @@ const handleBackgroundChange = () => {
 
     });
 }
-
 /* const toggleOrientation = () => {
 
     window.addEventListener('resize', () => {
@@ -545,17 +475,18 @@ const preloader = () => {
         preload.classList.remove('show-preloader');
     });
 }
-preloader()
-renderUsers().then(r => {
-    handleRimChange()
-});
-handleMenu()
-handleWindowSize()
-handleCarMenu()
-handleRimMenu()
-
-handleBackgroundChange()
-
+const start = () => {
+    preloader()
+    renderUsers().then(r => {
+        handleRimChange()
+    });
+    handleMenu()
+    handleWindowSize()
+    handleCarMenu()
+    handleRimMenu()
+    handleBackgroundChange()
+}
+start()
 
 
 
