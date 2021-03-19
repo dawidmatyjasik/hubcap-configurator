@@ -2,9 +2,7 @@ const handleMenu = () => {
     const list = document.querySelectorAll('.settings li');
     const carModelList = document.querySelector('.car-menu__model-list');
     const carColorList = document.querySelector('.car-menu__color-list');
-    const carMenu = document.querySelector('.car-menu')
     const carWrapper = document.querySelector('.car-wrapper');
-    const arrow = document.querySelector('.settings__logo:nth-last-child(1)');
     const navigation = document.querySelector('.navigation');
 
     list.forEach(li => {
@@ -456,17 +454,6 @@ const handleBackgroundChange = () => {
 
     });
 }
-/* const toggleOrientation = () => {
-
-    window.addEventListener('resize', () => {
-
-        if (window.innerWidth < window.innerHeight) {
-            document.body.classList.toggle('is-hidden');
-        } else {
-            document.body.classList.toggle('is-hidden');
-        }
-    });
-} */
 const preloader = () => {
     const preload = document.querySelector('.preload');
 
