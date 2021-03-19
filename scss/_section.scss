@@ -30,24 +30,52 @@
         font-weight: 700;
         font-family: 'Open Sans', sans-serif;
         color: grey;
-        font-size: 1.25rem;
+        font-size: .6rem;
+        @media (min-width: 400px) {
+            font-size: .75rem;
+        }
+        @media (min-width: 500px) {
+            font-size: 1rem;
+        }
+        @media (min-width: 800px) {
+            font-size: 1.25rem;
+        }
         @media (min-width: 1000px) {
             font-size: 1.75rem;
         }
     }
     &__color{
-        font-size: .75rem;
+        font-size: .5rem;
+        @media (min-width: 400px) {
+            font-size: .65rem;
+        }
+        @media (min-width: 500px) {
+            font-size: .9rem;
+        }
+        @media (min-width: 800px) {
+            font-size: 1.15rem;
+        }
     @media (min-width: 1000px) {
-        font-size: 1.25rem;
+        font-size: 1.65rem;
     }
     }
     &__size{
         font-weight: 700;
-        font-size: 1rem;
+        font-size: .6rem;
         color: black;
+        @media (min-width: 400px) {
+            font-size: .75rem;
+        }
+        @media (min-width: 500px) {
+            font-size: 1rem;
+        }
+        @media (min-width: 800px) {
+            font-size: 1.25rem;
+        }
         @media (min-width: 1000px) {
             font-size: 1.5rem;
         }
+        
         
     }
     &--background{
