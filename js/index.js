@@ -165,11 +165,21 @@ const handleCarMenu = () => {
 const handleRimMenu = () => {
     const list = document.querySelectorAll('.navigation__photo')
     const menu = document.querySelectorAll('.splide__list')
+    const argoList = document.querySelector('.argo-list')
+    const racingList = document.querySelector('.racing-list')
+    const jtacList = document.querySelector('.jtac-list')
+    const maxList = document.querySelector('.max-list')
     const argo = document.querySelector('.argo');
     const racing = document.querySelector('.racing');
     const jtac = document.querySelector('.jtac');
     const max6 = document.querySelector('.max6');
     const logo = document.querySelector('.info__logo');
+    const resetNavigationValues = () => {
+        argoList.classList.remove('navigation--slide-in')
+        racingList.classList.remove('navigation--slide-in')
+        jtacList.classList.remove('navigation--slide-in')
+        maxList.classList.remove('navigation--slide-in')
+    }
     const resetCompanyValues = () => {
         menu.forEach(li => {
             li.classList.add('is-hidden')
@@ -240,6 +250,8 @@ const handleRimMenu = () => {
             }
         })
         if (origin.dataset.companyName === "argo") {
+            resetNavigationValues()
+            argoList.classList.add('navigation--slide-in')
             argo.classList.remove('is-hidden')
             racing.classList.add('is-hidden')
             jtac.classList.add('is-hidden')
@@ -248,6 +260,8 @@ const handleRimMenu = () => {
             a.mount();
         }
         else if (origin.dataset.companyName === "4racing") {
+            resetNavigationValues()
+            racingList.classList.add('navigation--slide-in')
             argo.classList.add('is-hidden')
             racing.classList.remove('is-hidden')
             jtac.classList.add('is-hidden')
@@ -256,6 +270,8 @@ const handleRimMenu = () => {
             b.mount();
         }
         else if (origin.dataset.companyName === "jtac") {
+            resetNavigationValues()
+            jtacList.classList.add('navigation--slide-in')
             argo.classList.add('is-hidden')
             racing.classList.add('is-hidden')
             jtac.classList.remove('is-hidden')
@@ -264,6 +280,8 @@ const handleRimMenu = () => {
             c.mount();
         }
         else if (origin.dataset.companyName === "max6") {
+            resetNavigationValues()
+            maxList.classList.add('navigation--slide-in')
             argo.classList.add('is-hidden')
             racing.classList.add('is-hidden')
             jtac.classList.add('is-hidden')
