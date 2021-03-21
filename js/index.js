@@ -165,27 +165,25 @@ const handleCarMenu = () => {
 const handleRimMenu = () => {
     const list = document.querySelectorAll('.navigation__photo')
     const menu = document.querySelectorAll('.splide__list')
-    const argoList = document.querySelector('.argo-list')
-    const racingList = document.querySelector('.racing-list')
-    const jtacList = document.querySelector('.jtac-list')
-    const maxList = document.querySelector('.max-list')
     const argo = document.querySelector('.argo');
     const racing = document.querySelector('.racing');
     const jtac = document.querySelector('.jtac');
     const max6 = document.querySelector('.max6');
     const logo = document.querySelector('.info__logo');
     const resetNavigationValues = () => {
-        argoList.classList.remove('navigation--slide-in')
-        racingList.classList.remove('navigation--slide-in')
-        jtacList.classList.remove('navigation--slide-in')
-        maxList.classList.remove('navigation--slide-in')
+        document.querySelectorAll('.splide__track')[0].classList.remove('splide--slide-in')
+        document.querySelectorAll('.splide__track')[1].classList.remove('splide--slide-in')
+        document.querySelectorAll('.splide__track')[2].classList.remove('splide--slide-in')
+        document.querySelectorAll('.splide__track')[3].classList.remove('splide--slide-in')
     }
+
     const resetCompanyValues = () => {
         menu.forEach(li => {
             li.classList.add('is-hidden')
 
         });
     }
+
     const a = new Splide('#a', {
         perPage: 5,
         perMove: 1,
@@ -200,8 +198,7 @@ const handleRimMenu = () => {
                 perPage: 3,
             }
         }
-    });
-
+    })
     const pickCompany = (e) => {
         const origin = e.target;
         const b = new Splide('#b', {
@@ -251,7 +248,10 @@ const handleRimMenu = () => {
         })
         if (origin.dataset.companyName === "argo") {
             resetNavigationValues()
-            argoList.classList.add('navigation--slide-in')
+            // argoList.classList.add('splide--slide-in')
+
+            document.querySelectorAll('.splide__track')[0].classList.add('splide--slide-in')
+
             argo.classList.remove('is-hidden')
             racing.classList.add('is-hidden')
             jtac.classList.add('is-hidden')
@@ -261,7 +261,8 @@ const handleRimMenu = () => {
         }
         else if (origin.dataset.companyName === "4racing") {
             resetNavigationValues()
-            racingList.classList.add('navigation--slide-in')
+            // racingList.classList.add('splide--slide-in')
+            document.querySelectorAll('.splide__track')[1].classList.add('splide--slide-in')
             argo.classList.add('is-hidden')
             racing.classList.remove('is-hidden')
             jtac.classList.add('is-hidden')
@@ -271,7 +272,8 @@ const handleRimMenu = () => {
         }
         else if (origin.dataset.companyName === "jtac") {
             resetNavigationValues()
-            jtacList.classList.add('navigation--slide-in')
+            // jtacList.classList.add('splide--slide-in')
+            document.querySelectorAll('.splide__track')[2].classList.add('splide--slide-in')
             argo.classList.add('is-hidden')
             racing.classList.add('is-hidden')
             jtac.classList.remove('is-hidden')
@@ -281,7 +283,8 @@ const handleRimMenu = () => {
         }
         else if (origin.dataset.companyName === "max6") {
             resetNavigationValues()
-            maxList.classList.add('navigation--slide-in')
+            // maxList.classList.add('splide--slide-in')
+            document.querySelectorAll('.splide__track')[3].classList.add('splide--slide-in')
             argo.classList.add('is-hidden')
             racing.classList.add('is-hidden')
             jtac.classList.add('is-hidden')
@@ -381,7 +384,7 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/argo/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/argo/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
         argo += htmlSegment;
@@ -398,7 +401,7 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/4racing/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/4racing/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
         racing += htmlSegment;
@@ -415,7 +418,7 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/jtac/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/jtac/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
         console.log("tutaj nie działa ikonka add, ponieważ zmieniłem src w katalogu roboczym");
@@ -434,7 +437,7 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/max6/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki_bez_opon/max6/${data.path}.png&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
         max += htmlSegment;
@@ -468,6 +471,18 @@ const handleBackgroundChange = () => {
 
     });
 }
+const handleMenuChange = () => {
+    const icons = document.querySelectorAll('.splide__slide')
+    icons.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            icons.forEach(icon => {
+                icon.classList.remove('settings--active')
+            });
+            icon.classList.add('settings--active')
+        })
+    });
+}
+
 /* const setBackground = () => {
     const list = document.querySelectorAll('.splide__slide')
     const reset = () => {
@@ -486,7 +501,6 @@ const handleBackgroundChange = () => {
 } */
 const handleIconChange = () => {
     const icons = document.querySelectorAll('.settings--change')
-    console.log(icons);
     icons.forEach(icon => {
         icon.addEventListener('click', (e) => {
             icons.forEach(icon => {
@@ -509,6 +523,7 @@ const start = () => {
     preloader()
     renderUsers().then(r => {
         handleRimChange()
+        handleMenuChange()
         // setBackground()
 
     });
