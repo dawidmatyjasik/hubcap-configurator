@@ -17,7 +17,7 @@
   &__model-list{
     width: 12vw;
     overflow: scroll;
-    background-color: white;
+    background-color: #dddddd;
     
   }
   &__color-list{
@@ -26,7 +26,7 @@
     align-items: center;
     width: 12vw;
     overflow: scroll;
-    background-color: white;
+    background-color: #dddddd;
   }
   &__li{
     width: 100%;
@@ -173,7 +173,7 @@
       position: absolute;
       width: 10vw;
       top: 0;
-      right: 5%;
+      right: 0%;
       // transform: translateY(-50%);
       overflow: visible !important;
 }

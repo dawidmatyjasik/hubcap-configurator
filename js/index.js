@@ -312,8 +312,6 @@ const handleRimChange = () => {
     }
     const pickModel = (e) => {
         const origin = e.target;
-        console.log(origin);
-
         const header = document.querySelector('.description__header');
         const color = document.querySelector('.description__color');
         const size = document.querySelector('.description__size');
@@ -324,7 +322,6 @@ const handleRimChange = () => {
         hubcaps.forEach(hubcap => {
             hubcap.style.backgroundImage = `url('assets/kolpaki_bez_opon/${src.company}/${src.model}.png')`
         })
-
     }
     list.forEach(li => {
         li.addEventListener('click', pickCompany)
@@ -371,7 +368,6 @@ async function renderUsers() {
     let jtac = '';
     let max = '';
 
-    console.log(data);
 
     data.argo.forEach(data => {
         let htmlSegment = `
@@ -472,6 +468,35 @@ const handleBackgroundChange = () => {
 
     });
 }
+/* const setBackground = () => {
+    const list = document.querySelectorAll('.splide__slide')
+    const reset = () => {
+        list.forEach(li => {
+            li.classList.remove('selected')
+        });
+    }
+    list.forEach(li => {
+        li.addEventListener('click', (e) => {
+            reset()
+            e.target.classList.add('selected')
+            console.log(e.target);
+
+        })
+    });
+} */
+const handleIconChange = () => {
+    const icons = document.querySelectorAll('.settings--change')
+    console.log(icons);
+    icons.forEach(icon => {
+        icon.addEventListener('click', (e) => {
+            icons.forEach(icon => {
+                icon.classList.remove('settings--active')
+            });
+            icon.classList.add('settings--active')
+        })
+    });
+}
+
 const preloader = () => {
     const preload = document.querySelector('.preload');
 
@@ -484,13 +509,18 @@ const start = () => {
     preloader()
     renderUsers().then(r => {
         handleRimChange()
+        // setBackground()
+
     });
     handleMenu()
     handleWindowSize()
     handleCarMenu()
     handleRimMenu()
     handleBackgroundChange()
+    handleIconChange()
+
 }
+
 start()
 
 
