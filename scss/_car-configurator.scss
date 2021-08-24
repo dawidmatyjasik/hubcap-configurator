@@ -1,26 +1,24 @@
-
-.car-wrapper{
-    background-image: url('../assets/tlo_4.png');
-    background-size: cover;
-    background-position: center;
-    flex-basis: 68vh;
-    width: 100vw;
-    position: relative;
-    margin-left: auto;
+.car-wrapper {
+  background-image: url("../assets/tlo_4.png");
+  background-size: cover;
+  background-position: center;
+  flex-basis: 68vh;
+  width: 100vw;
+  position: relative;
+  margin-left: auto;
 }
-.car-menu{
+.car-menu {
   height: 60vh;
   left: 0;
   top: 0;
   width: 12vw;
   position: absolute;
-  &__model-list{
+  &__model-list {
     width: 12vw;
     overflow: scroll;
     background-color: #dddddd;
-    
   }
-  &__color-list{
+  &__color-list {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,172 +26,170 @@
     overflow: scroll;
     background-color: #dddddd;
   }
-  &__li{
+  &__li {
     width: 100%;
     cursor: pointer;
   }
 
-  &__li img{
+  &__li img {
     object-fit: cover;
-    width: 100%;  
+    width: 100%;
   }
-  
-  
 }
 .car {
-    display: flex;
-    margin: 0;
-    padding: 0;
-    position: relative;
-    width: 100%;
-    height: auto;
-    transform: translateY(-50%);
-    top: 50%;
-    padding-left: -10vw;
-    
-    &--size {
-      --d: 4;  /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
-      --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
-      --rb: 7.5;   /* distance from right edge of the image to center of back wheel */
-      --bf: 2.45; /* distance from bottom of image to center of front wheel */
-      --bb: 2.45;  /* distance from bottom of image to center of back wheel */
-      --w: 30;   /* width of the image */
-      --h: 11;    /* height of the image */
-     }
-     &--size-default {
-      --d: 4.1;  
-      --lf: 6.38; 
-      --rb: 7.5;  
-      --bf: 2.45; 
-      --bb: 2.45; 
-      --w: 30;  
-      --h: 11;    
-     }
-    &--size-mercedes{
-      --d: 4;  
-      --lf: 6.38; 
-      --rb: 8.6;  
-      --bf: 2.45; 
-      --bb: 2.45; 
-      --w: 30;  
-      --h: 11;    
-    }
-    &--size-range {
-      --d: 4.4;  
-      --lf: 6.38; 
-      --rb: 8.33;  
-      --bf: 2.55; 
-      --bb: 2.55; 
-      --w: 30;  
-      --h: 11;    
-     }
-    &--size-vw {
-      --d: 4;  
-      --lf: 6.38; 
-      --rb: 7.1;  
-      --bf: 2.45; 
-      --bb: 2.45; 
-      --w: 30;  
-      --h: 11;    
-     }
-    &--size-fiat {
-      --d: 3.4;  
-      --lf: 6.38; 
-      --rb: 9.7;   
-      --bf: 2.3; 
-      --bb: 2.3; 
-      --w: 30;  
-      --h: 11;    
-     }
-    &--size-van {
-      --d: 3.1;  
-      --lf: 5.95; 
-      --rb: 8.55;  
-      --bf: 2.15; 
-      --bb: 2.15; 
-      --w: 30;  
-      --h: 11;    
-     }
-     &--size-mini-bus {
-      --d: 3.1;  
-      --lf: 5.75; 
-      --rb: 8.57;  
-      --bf: 2.15; 
-      --bb: 2.15; 
-      --w: 30;  
-      --h: 11;    
-     }
-    &--size-bus {
-      --d: 2;  
-      --lf: 6.42; 
-      --rb: 9.5;  
-      --bf: 1.5; 
-      --bb: 1.5; 
-      --w: 30;  
-      --h: 11;  
-     }
-     &--size-truck {
-      --d: 2.2;  
-      --lf: 8.625;
-      --rb: 12.45;   
-      --bf: 1.55; 
-      --bb: 1.55;
-      --w: 30;  
-      --h: 11;   
-     }
+  display: flex;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  width: 100%;
+  height: auto;
+  transform: translateY(-50%);
+  top: 50%;
+  padding-left: -10vw;
 
-     &__hubcap {
-      position: absolute;
-      width: calc((var(--d) / var(--w)) * 100%);
-      height: calc((var(--d) / var(--h)) * 100%);
-      background-image: url('../assets/kolpaki_bez_opon/argo/avalone_pro.png');
-      -o-background-size: cover;
-      -moz-background-size: cover;
-      -webkit-background-size:cover;
-      background-position: center;
-      background-size: cover;
-      border-style: solid;
-    }
-    &--hubcap-front {
-      bottom: calc((var(--bf) / var(--h)) * 100%);
-      left: calc((var(--lf) / var(--w)) * 100%);
-      transform: translateX(-50%) translateY(50%);
-    }
-    &--hubcap-back {
-      bottom: calc((var(--bb) / var(--h)) * 100%);
-      right: calc((var(--rb) / var(--w)) * 100%);
-      transform: translateX(50%) translateY(50%);
-    }
-    &__img{
-      margin: 0 auto;
-      width: 100%;
-    }
+  &--size {
+    --d: 4; /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
+    --lf: 6.38; /* distance from left edge of the image to center of front wheel  */
+    --rb: 7.5; /* distance from right edge of the image to center of back wheel */
+    --bf: 2.45; /* distance from bottom of image to center of front wheel */
+    --bb: 2.45; /* distance from bottom of image to center of back wheel */
+    --w: 24; /* width of the image */
+    --h: 9; /* height of the image */
   }
-  .logo{
-      position: absolute;
-      width: 10vw;
-      top: 0;
-      right: 0%;
-      // transform: translateY(-50%);
-      overflow: visible !important;
+  &--size-default {
+    --d: 4.1;
+    --lf: 6.38;
+    --rb: 7.5;
+    --bf: 2.45;
+    --bb: 2.45;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-mercedes {
+    --d: 4;
+    --lf: 6.38;
+    --rb: 8.6;
+    --bf: 2.45;
+    --bb: 2.45;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-range {
+    --d: 4.4;
+    --lf: 6.38;
+    --rb: 8.33;
+    --bf: 2.55;
+    --bb: 2.55;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-vw {
+    --d: 4;
+    --lf: 6.38;
+    --rb: 7.1;
+    --bf: 2.45;
+    --bb: 2.45;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-fiat {
+    --d: 3.4;
+    --lf: 6.38;
+    --rb: 9.7;
+    --bf: 2.3;
+    --bb: 2.3;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-van {
+    --d: 3.1;
+    --lf: 5.95;
+    --rb: 8.55;
+    --bf: 2.15;
+    --bb: 2.15;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-mini-bus {
+    --d: 3.1;
+    --lf: 5.75;
+    --rb: 8.57;
+    --bf: 2.15;
+    --bb: 2.15;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-bus {
+    --d: 2;
+    --lf: 6.42;
+    --rb: 9.5;
+    --bf: 1.5;
+    --bb: 1.5;
+    --w: 24;
+    --h: 8;
+  }
+  &--size-truck {
+    --d: 2.2;
+    --lf: 8.625;
+    --rb: 12.45;
+    --bf: 1.55;
+    --bb: 1.55;
+    --w: 24;
+    --h: 8;
+  }
+
+  &__hubcap {
+    position: absolute;
+    width: calc((var(--d) / var(--w)) * 100%);
+    height: calc((var(--d) / var(--h)) * 100%);
+    background-image: url("../assets/kolpaki_bez_opon/argo/avalone_pro.png");
+    -o-background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    background-position: center;
+    background-size: cover;
+    border-style: solid;
+  }
+  &--hubcap-front {
+    bottom: calc((var(--bf) / var(--h)) * 100%);
+    left: calc((var(--lf) / var(--w)) * 100%);
+    transform: translateX(-50%) translateY(50%);
+  }
+  &--hubcap-back {
+    bottom: calc((var(--bb) / var(--h)) * 100%);
+    right: calc((var(--rb) / var(--w)) * 100%);
+    transform: translateX(50%) translateY(50%);
+  }
+  &__img {
+    margin: 0 auto;
+    width: 100%;
+  }
 }
-.background-menu{
+.logo {
+  position: absolute;
+  width: 10vw;
+  top: 0;
+  right: 0%;
+  // transform: translateY(-50%);
+  overflow: visible !important;
+}
+.background-menu {
   position: absolute;
   bottom: 0;
   right: 0;
   z-index: 999;
-  &__element img{
-      width: 5vw;
-      cursor: pointer;
+  &__element img {
+    width: 5vw;
+    cursor: pointer;
   }
 }
-.is-hidden{
+.is-hidden {
   display: none !important;
   z-index: -1 !important;
 }
-.visibility{
+.visibility {
   visibility: hidden;
 }
-.is-hidden .splide__arrows{
+.is-hidden .splide__arrows {
   visibility: hidden;
-  }
+}

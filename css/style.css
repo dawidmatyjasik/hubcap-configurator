@@ -306,9 +306,9 @@ nav {
   /* distance from bottom of image to center of front wheel */
   --bb: 2.45;
   /* distance from bottom of image to center of back wheel */
-  --w: 30;
+  --w: 24;
   /* width of the image */
-  --h: 11;
+  --h: 9;
   /* height of the image */
 }
 
@@ -318,8 +318,8 @@ nav {
   --rb: 7.5;
   --bf: 2.45;
   --bb: 2.45;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-mercedes {
@@ -328,8 +328,8 @@ nav {
   --rb: 8.6;
   --bf: 2.45;
   --bb: 2.45;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-range {
@@ -338,8 +338,8 @@ nav {
   --rb: 8.33;
   --bf: 2.55;
   --bb: 2.55;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-vw {
@@ -348,8 +348,8 @@ nav {
   --rb: 7.1;
   --bf: 2.45;
   --bb: 2.45;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-fiat {
@@ -358,8 +358,8 @@ nav {
   --rb: 9.7;
   --bf: 2.3;
   --bb: 2.3;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-van {
@@ -368,8 +368,8 @@ nav {
   --rb: 8.55;
   --bf: 2.15;
   --bb: 2.15;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-mini-bus {
@@ -378,8 +378,8 @@ nav {
   --rb: 8.57;
   --bf: 2.15;
   --bb: 2.15;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-bus {
@@ -388,8 +388,8 @@ nav {
   --rb: 9.5;
   --bf: 1.5;
   --bb: 1.5;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car--size-truck {
@@ -398,8 +398,8 @@ nav {
   --rb: 12.45;
   --bf: 1.55;
   --bb: 1.55;
-  --w: 30;
-  --h: 11;
+  --w: 24;
+  --h: 8;
 }
 
 .car__hubcap {
