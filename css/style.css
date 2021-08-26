@@ -296,38 +296,48 @@ nav {
 }
 
 .car--size {
-  --d: 4;
+  --d: 3.3;
   /* diameter of wheels. Doesn't matter what units - just use the same units for all these measurements*/
-  --lf: 6.38;
+  --lf: 5.13;
   /* distance from left edge of the image to center of front wheel  */
-  --rb: 7.5;
+  --rb: 6;
   /* distance from right edge of the image to center of back wheel */
-  --bf: 2.45;
+  --bf: 1.7;
   /* distance from bottom of image to center of front wheel */
-  --bb: 2.45;
+  --bb: 1.8;
   /* distance from bottom of image to center of back wheel */
   --w: 24;
   /* width of the image */
-  --h: 9;
+  --h: 8;
   /* height of the image */
 }
 
 .car--size-default {
-  --d: 4.1;
-  --lf: 6.38;
-  --rb: 7.5;
-  --bf: 2.45;
-  --bb: 2.45;
+  --d: 3.3;
+  --lf: 5.13;
+  --rb: 6;
+  --bf: 1.7;
+  --bb: 1.8;
+  --w: 24;
+  --h: 8;
+}
+
+.car--size-mazda {
+  --d: 3.3;
+  --lf: 5.13;
+  --rb: 6;
+  --bf: 1.7;
+  --bb: 1.7;
   --w: 24;
   --h: 8;
 }
 
 .car--size-mercedes {
-  --d: 4;
-  --lf: 6.38;
-  --rb: 8.6;
-  --bf: 2.45;
-  --bb: 2.45;
+  --d: 3.3;
+  --lf: 5.1;
+  --rb: 6.9;
+  --bf: 1.7;
+  --bb: 1.7;
   --w: 24;
   --h: 8;
 }

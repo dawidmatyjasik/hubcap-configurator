@@ -91,6 +91,7 @@ const handleCarMenu = () => {
     const car = document.querySelector(".car");
     car.classList.remove(
       "car--size-default",
+      "car--size-mazda",
       "car--size-mercedes",
       "car--size-range",
       "car--size-vw",
@@ -114,10 +115,10 @@ const handleCarMenu = () => {
       car.classList.add("car--size-default");
     } else if (origin.dataset.carType === "mazda") {
       resetCarValues();
-      car.classList.add("car--size-default");
+      car.classList.add("car--size-mazda");
     } else if (origin.dataset.carType === "mazda_wagon") {
       resetCarValues();
-      car.classList.add("car--size-default");
+      car.classList.add("car--size-mazda");
     } else if (origin.dataset.carType === "mercedes") {
       resetCarValues();
       car.classList.add("car--size-mercedes");
