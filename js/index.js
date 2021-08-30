@@ -303,7 +303,7 @@ const handleRimChange = () => {
 
   let src = {
     company: `argo`,
-    model: `avalone_pro`,
+    model: `1_avalon_carbon`,
   };
 
   const pickCompany = (e) => {
@@ -319,8 +319,9 @@ const handleRimChange = () => {
     color.textContent = origin.dataset.modelColor;
     size.textContent = origin.dataset.modelSize;
     src.model = origin.dataset.modelName;
+
     hubcaps.forEach((hubcap) => {
-      hubcap.style.backgroundImage = `url('assets/kolpaki/${src.company}/${src.model}.webp')`;
+      hubcap.style.backgroundImage = `url('../assets/kolpaki/${src.company}/${src.model}.webp')`;
       //   hubcap.style.backgroundImage = `url('assets/test.webp')`;
     });
   };
@@ -381,7 +382,6 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki/argo/${data.path}.webp&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
     argo += htmlSegment;
@@ -398,7 +398,6 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki/4racing/${data.path}.webp&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
     racing += htmlSegment;
@@ -415,12 +414,8 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki/jtac/${data.path}.webp&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
         </li> 
         `;
-    console.log(
-      "tutaj nie działa ikonka add, ponieważ zmieniłem src w katalogu roboczym"
-    );
 
     jtac += htmlSegment;
   });
@@ -436,11 +431,12 @@ async function renderUsers() {
         data-model-header="${data.header}"
         data-model-color="${data.color}"
         data-model-size='${data.size} '>
-        <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki/max6/${data.path}.webp&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
-        </li> 
+        </li>
         `;
     max += htmlSegment;
   });
+  /*  <a target="_blank" href="http://config.gorecki.pl/podglad.html?rim=images/kolpaki/max6/${data.path}.webp&background=images/tla/przymierzalnia_${choices.background}.png&auto=${choices.carChoice}&color=${choices.colorChoice}&front=undefined"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+  </li>  */
   argoList.innerHTML = argo;
   racingList.innerHTML = racing;
   jtacList.innerHTML = jtac;
@@ -549,16 +545,16 @@ const handleBrowser = () => {
   }
 };
 
-const preloader = () => {
+/* const preloader = () => {
   const preload = document.querySelector(".preload");
 
   preload.classList.add("show-preloader");
   window.addEventListener("load", () => {
     preload.classList.remove("show-preloader");
   });
-};
+}; */
 const start = () => {
-  preloader();
+  // preloader();
   renderUsers().then((r) => {
     handleRimChange();
     handleMenuChange();
