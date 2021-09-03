@@ -1,3 +1,11 @@
+let src = {
+  company: `argo`,
+  model: `1_avalon_carbon`,
+};
+let cars = {
+  argo: "",
+  max: "",
+};
 const handleMenu = () => {
   const list = document.querySelectorAll(".settings li");
   const carModelList = document.querySelector(".car-menu__model-list");
@@ -102,10 +110,56 @@ const handleCarMenu = () => {
       "car--size-truck"
     );
   };
+  const resetNavigationValues = () => {
+    document
+      .querySelectorAll(".splide__track")[0]
+      .classList.remove("splide--slide-in");
+    document
+      .querySelectorAll(".splide__track")[1]
+      .classList.remove("splide--slide-in");
+    document
+      .querySelectorAll(".splide__track")[2]
+      .classList.remove("splide--slide-in");
+    document
+      .querySelectorAll(".splide__track")[3]
+      .classList.remove("splide--slide-in");
+  };
   const pickModelAndColor = (e) => {
     const origin = e.target;
+    const logo = document.querySelector(".info__logo");
     const icons = document.querySelectorAll(".navigation__logo");
     carType = origin.dataset.carType;
+    const a = new Splide("#a", {
+      perPage: 5,
+      perMove: 1,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+    const d = new Splide("#d", {
+      perPage: 5,
+      perMove: 1,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+
     if (origin.dataset.colorType || origin.dataset.carType) {
       choices.carChoice = origin.dataset.carType || choices.carChoice;
       choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
@@ -146,16 +200,43 @@ const handleCarMenu = () => {
       resetCarValues();
       car.classList.add("car--size-truck");
     }
+    const hubcaps = document.querySelectorAll(".car__hubcap");
+    console.log(src);
+
     if (carType === "truck" || carType === "bus_scania") {
+      console.log("1");
+      d.mount();
+      resetNavigationValues();
+      document
+        .querySelectorAll(".splide__track")[3]
+        .classList.add("splide--slide-in");
       icons[0].classList.add("is-hidden");
       icons[1].classList.add("is-hidden");
       icons[2].classList.add("is-hidden");
       icons[3].classList.remove("is-hidden");
+      logo.src = "assets/logo/truck.png";
+      src.company = "argos";
+      src.model = "1_avalon_carbon";
+
+      hubcaps.forEach((hubcap) => {
+        hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
+      });
     } else {
+      console.log("2");
+      a.mount();
+      resetNavigationValues();
+      document
+        .querySelectorAll(".splide__track")[0]
+        .classList.add("splide--slide-in");
       icons[0].classList.remove("is-hidden");
       icons[1].classList.remove("is-hidden");
       icons[2].classList.remove("is-hidden");
       icons[3].classList.add("is-hidden");
+      src.company = "argo";
+      src.model = "1_avalon_carbon";
+      hubcaps.forEach((hubcap) => {
+        hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
+      });
     }
   };
 
@@ -171,6 +252,12 @@ const handleRimMenu = () => {
   const jtac = document.querySelector(".jtac");
   const max6 = document.querySelector(".max6");
   const logo = document.querySelector(".info__logo");
+
+  const resetCompanyValues = () => {
+    menu.forEach((li) => {
+      li.classList.add("is-hidden");
+    });
+  };
   const resetNavigationValues = () => {
     document
       .querySelectorAll(".splide__track")[0]
@@ -185,13 +272,6 @@ const handleRimMenu = () => {
       .querySelectorAll(".splide__track")[3]
       .classList.remove("splide--slide-in");
   };
-
-  const resetCompanyValues = () => {
-    menu.forEach((li) => {
-      li.classList.add("is-hidden");
-    });
-  };
-
   const a = new Splide("#a", {
     perPage: 5,
     perMove: 1,
@@ -310,15 +390,11 @@ const handleRimMenu = () => {
     li.addEventListener("click", pickCompany);
   });
 };
+
 const handleRimChange = () => {
   const hubcaps = document.querySelectorAll(".car__hubcap");
   const list = document.querySelectorAll(".navigation__photo");
   const menu = document.querySelectorAll(".splide__image");
-
-  let src = {
-    company: `argo`,
-    model: `1_avalon_carbon`,
-  };
 
   const pickCompany = (e) => {
     const origin = e.target;
@@ -363,6 +439,7 @@ const createSplide = () => {
     },
   }).mount();
 };
+
 async function getData() {
   const url = "./data.json";
   try {
