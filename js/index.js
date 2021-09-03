@@ -201,7 +201,6 @@ const handleCarMenu = () => {
       car.classList.add("car--size-truck");
     }
     const hubcaps = document.querySelectorAll(".car__hubcap");
-    console.log(src);
 
     if (carType === "truck" || carType === "bus_scania") {
       console.log("1");
@@ -215,9 +214,8 @@ const handleCarMenu = () => {
       icons[2].classList.add("is-hidden");
       icons[3].classList.remove("is-hidden");
       logo.src = "assets/logo/truck.png";
-      src.company = "argos";
-      src.model = "1_avalon_carbon";
-
+      src.company = "";
+      src.model = "";
       hubcaps.forEach((hubcap) => {
         hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
       });
@@ -244,7 +242,7 @@ const handleCarMenu = () => {
     li.addEventListener("click", pickModelAndColor);
   });
 };
-const handleRimMenu = () => {
+const handleRimMenu = (e) => {
   const list = document.querySelectorAll(".navigation__photo");
   const menu = document.querySelectorAll(".splide__list");
   const argo = document.querySelector(".argo");
@@ -409,7 +407,6 @@ const handleRimChange = () => {
     color.textContent = origin.dataset.modelColor;
     size.textContent = origin.dataset.modelSize;
     src.model = origin.dataset.modelName;
-
     hubcaps.forEach((hubcap) => {
       hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
       //   hubcap.style.backgroundImage = `url('assets/test.webp')`;
