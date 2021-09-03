@@ -416,7 +416,7 @@ nav {
   position: absolute;
   width: calc((var(--d) / var(--w)) * 100%);
   height: calc((var(--d) / var(--h)) * 100%);
-  background-image: url("../assets/kolpaki_bez_opon/argo/avalone_pro.png");
+  background-image: url("../assets/kolpaki/argo/1_avalon_carbon.webp");
   -o-background-size: cover;
   -moz-background-size: cover;
   -webkit-background-size: cover;

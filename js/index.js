@@ -78,7 +78,16 @@ let choices = {
   carChoice: "bmw",
   colorChoice: "black",
   background: "tlo_1",
+  argo: "",
+  max: "",
 };
+let carType = "bmw";
+
+let src = {
+  company: `argo`,
+  model: `1_avalon_carbon`,
+};
+
 const handleCarMenu = () => {
   const carImg = document.querySelector(".car__img");
   const car = document.querySelector(".car");
@@ -87,6 +96,7 @@ const handleCarMenu = () => {
         carChoice: "bmw",
         colorChoice: "black",
     }; */
+
   const resetCarValues = () => {
     const car = document.querySelector(".car");
     car.classList.remove(
@@ -102,45 +112,171 @@ const handleCarMenu = () => {
       "car--size-truck"
     );
   };
+
   const pickModelAndColor = (e) => {
     const origin = e.target;
-    if (origin.dataset.colorType || origin.dataset.carType) {
-      choices.carChoice = origin.dataset.carType || choices.carChoice;
+    carType = origin.dataset.carType;
+    const icons = document.querySelectorAll(`.navigation__logo`);
+
+    const argo = document.querySelector(".argo");
+    const racing = document.querySelector(".racing");
+    const jtac = document.querySelector(".jtac");
+    const max6 = document.querySelector(".max6");
+    const logo = document.querySelector(".info__logo");
+    const hubcaps = document.querySelectorAll(".car__hubcap");
+    /*     const argoIcon = document.querySelector(`[data-company-name="argo"]`);
+    const racingIcon = document.querySelector(`[data-company-name="4racing"]`);
+    const jtecIcon = document.querySelector(`[data-company-name="jtac"]`);
+    const maxIcon = document.querySelector(`[data-company-name="max6"]`); */
+
+    if (origin.dataset.colorType || carType) {
+      choices.carChoice = carType || choices.carChoice;
       choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
       carImg.src = `assets/auto/${choices.carChoice}/${choices.colorChoice}.png`;
     }
 
-    if (origin.dataset.carType === "bmw") {
+    src.company = origin.dataset.companyName;
+    const header = document.querySelector(".description__header");
+    const color = document.querySelector(".description__color");
+    const size = document.querySelector(".description__size");
+    header.textContent = origin.dataset.modelHeader;
+    color.textContent = origin.dataset.modelColor;
+    size.textContent = origin.dataset.modelSize;
+    src.model = origin.dataset.modelName;
+    /*       hubcaps.forEach((hubcap) => {
+        hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
+        //   hubcap.style.backgroundImage = `url('assets/test.webp')`;
+      });
+     */
+
+    const a = new Splide("#a", {
+      perPage: 5,
+      perMove: 1,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+
+    const d = new Splide("#d", {
+      perPage: 5,
+      perMove: 1,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+
+    if (carType == "truck" || carType === "bus_scania") {
+      icons[0].classList.add("is-hidden");
+      icons[1].classList.add("is-hidden");
+      icons[2].classList.add("is-hidden");
+      icons[3].classList.remove("is-hidden");
+      document
+        .querySelectorAll(".splide__track")[0]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[1]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[2]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[3]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[3]
+        .classList.add("splide--slide-in");
+      argo.classList.add("is-hidden");
+      racing.classList.add("is-hidden");
+      jtac.classList.add("is-hidden");
+      max6.classList.remove("is-hidden");
+      logo.src = "assets/logo/truck.png";
+      d.mount();
+    } else {
+      console.log("2");
+
+      icons[0].classList.remove("is-hidden");
+      icons[1].classList.remove("is-hidden");
+      icons[2].classList.remove("is-hidden");
+      icons[3].classList.add("is-hidden");
+      document
+        .querySelectorAll(".splide__track")[0]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[1]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[2]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[3]
+        .classList.remove("splide--slide-in");
+      document;
+      document
+        .querySelectorAll(".splide__track")[0]
+        .classList.add("splide--slide-in");
+
+      argo.classList.remove("is-hidden");
+      racing.classList.add("is-hidden");
+      jtac.classList.add("is-hidden");
+      max6.classList.add("is-hidden");
+      logo.src = "assets/logo/argo.png";
+      a.mount();
+      src.company = "argo";
+      src.model = "1_avalon_carbon";
+    }
+    console.log(src);
+
+    hubcaps.forEach((hubcap) => {
+      hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
+    });
+
+    if (carType === "bmw") {
       resetCarValues();
       car.classList.add("car--size-default");
-    } else if (origin.dataset.carType === "mazda") {
+    } else if (carType === "mazda") {
       resetCarValues();
       car.classList.add("car--size-mazda");
-    } else if (origin.dataset.carType === "mazda_wagon") {
+    } else if (carType === "mazda_wagon") {
       resetCarValues();
       car.classList.add("car--size-mazda");
-    } else if (origin.dataset.carType === "mercedes") {
+    } else if (carType === "mercedes") {
       resetCarValues();
       car.classList.add("car--size-mercedes");
-    } else if (origin.dataset.carType === "range") {
+    } else if (carType === "range") {
       resetCarValues();
       car.classList.add("car--size-range");
-    } else if (origin.dataset.carType === "vw") {
+    } else if (carType === "vw") {
       resetCarValues();
       car.classList.add("car--size-vw");
-    } else if (origin.dataset.carType === "fiat") {
+    } else if (carType === "fiat") {
       resetCarValues();
       car.classList.add("car--size-fiat");
-    } else if (origin.dataset.carType === "van") {
+    } else if (carType === "van") {
       resetCarValues();
       car.classList.add("car--size-van");
-    } else if (origin.dataset.carType === "minibus") {
+    } else if (carType === "minibus") {
       resetCarValues();
       car.classList.add("car--size-mini-bus");
-    } else if (origin.dataset.carType === "bus_scania") {
+    } else if (carType === "bus_scania") {
       resetCarValues();
       car.classList.add("car--size-bus");
-    } else if (origin.dataset.carType === "truck") {
+    } else if (carType === "truck") {
       resetCarValues();
       car.classList.add("car--size-truck");
     }
@@ -157,6 +293,7 @@ const handleRimMenu = () => {
   const jtac = document.querySelector(".jtac");
   const max6 = document.querySelector(".max6");
   const logo = document.querySelector(".info__logo");
+
   const resetNavigationValues = () => {
     document
       .querySelectorAll(".splide__track")[0]
@@ -195,6 +332,7 @@ const handleRimMenu = () => {
   });
   const pickCompany = (e) => {
     const origin = e.target;
+
     const b = new Splide("#b", {
       perPage: 5,
       perMove: 1,
@@ -242,7 +380,6 @@ const handleRimMenu = () => {
     });
     if (origin.dataset.companyName === "argo") {
       resetNavigationValues();
-      // argoList.classList.add('splide--slide-in')
 
       document
         .querySelectorAll(".splide__track")[0]
@@ -256,7 +393,6 @@ const handleRimMenu = () => {
       a.mount();
     } else if (origin.dataset.companyName === "4racing") {
       resetNavigationValues();
-      // racingList.classList.add('splide--slide-in')
       document
         .querySelectorAll(".splide__track")[1]
         .classList.add("splide--slide-in");
@@ -268,7 +404,6 @@ const handleRimMenu = () => {
       b.mount();
     } else if (origin.dataset.companyName === "jtac") {
       resetNavigationValues();
-      // jtacList.classList.add('splide--slide-in')
       document
         .querySelectorAll(".splide__track")[2]
         .classList.add("splide--slide-in");
@@ -280,7 +415,6 @@ const handleRimMenu = () => {
       c.mount();
     } else if (origin.dataset.companyName === "max6") {
       resetNavigationValues();
-      // maxList.classList.add('splide--slide-in')
       document
         .querySelectorAll(".splide__track")[3]
         .classList.add("splide--slide-in");
@@ -288,7 +422,7 @@ const handleRimMenu = () => {
       racing.classList.add("is-hidden");
       jtac.classList.add("is-hidden");
       max6.classList.remove("is-hidden");
-      logo.src = "assets/logo/max6.png";
+      logo.src = "assets/logo/truck.png";
       d.mount();
     }
   };
@@ -296,16 +430,11 @@ const handleRimMenu = () => {
     li.addEventListener("click", pickCompany);
   });
 };
+
 const handleRimChange = () => {
   const hubcaps = document.querySelectorAll(".car__hubcap");
   const list = document.querySelectorAll(".navigation__photo");
   const menu = document.querySelectorAll(".splide__image");
-
-  let src = {
-    company: `argo`,
-    model: `1_avalon_carbon`,
-  };
-
   const pickCompany = (e) => {
     const origin = e.target;
     src.company = origin.dataset.companyName;
@@ -319,9 +448,8 @@ const handleRimChange = () => {
     color.textContent = origin.dataset.modelColor;
     size.textContent = origin.dataset.modelSize;
     src.model = origin.dataset.modelName;
-
     hubcaps.forEach((hubcap) => {
-      hubcap.style.backgroundImage = `url('../assets/kolpaki/${src.company}/${src.model}.webp')`;
+      hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
       //   hubcap.style.backgroundImage = `url('assets/test.webp')`;
     });
   };
@@ -441,6 +569,9 @@ async function renderUsers() {
   racingList.innerHTML = racing;
   jtacList.innerHTML = jtac;
   maxList.innerHTML = max;
+  choices.max = max;
+  choices.argo = argo;
+
   createSplide();
 }
 const handleBackgroundChange = () => {

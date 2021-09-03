@@ -171,7 +171,7 @@
         {
             "header": "RST",
             "color": "black",
-            "path": "225_rst_black",
+            "path": "25_rst_black",
             "size": "13\" 14\" 15\" 16\"",
             "id": "25"
         },
@@ -1049,6 +1049,12 @@
         }
     ],
     "max": [
-        
+        {
+            "header": "TB01-F",
+            "color": "",
+            "path": "TB01-F_ok",
+            "size": "22.5\"",
+            "id": "1"
+        }
     ]
 }
