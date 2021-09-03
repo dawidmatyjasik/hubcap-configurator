@@ -126,9 +126,40 @@ const handleCarMenu = () => {
   };
   const pickModelAndColor = (e) => {
     const origin = e.target;
-    const logo = document.querySelector(".info__logo");
-    const icons = document.querySelectorAll(".navigation__logo");
     carType = origin.dataset.carType;
+    const icons = document.querySelectorAll(`.navigation__logo`);
+
+    const argo = document.querySelector(".argo");
+    const racing = document.querySelector(".racing");
+    const jtac = document.querySelector(".jtac");
+    const max6 = document.querySelector(".max6");
+    const logo = document.querySelector(".info__logo");
+    const hubcaps = document.querySelectorAll(".car__hubcap");
+    /*     const argoIcon = document.querySelector(`[data-company-name="argo"]`);
+    const racingIcon = document.querySelector(`[data-company-name="4racing"]`);
+    const jtecIcon = document.querySelector(`[data-company-name="jtac"]`);
+    const maxIcon = document.querySelector(`[data-company-name="max6"]`); */
+
+    if (origin.dataset.colorType || carType) {
+      choices.carChoice = carType || choices.carChoice;
+      choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
+      carImg.src = `assets/auto/${choices.carChoice}/${choices.colorChoice}.png`;
+    }
+
+    src.company = origin.dataset.companyName;
+    const header = document.querySelector(".description__header");
+    const color = document.querySelector(".description__color");
+    const size = document.querySelector(".description__size");
+    header.textContent = origin.dataset.modelHeader;
+    color.textContent = origin.dataset.modelColor;
+    size.textContent = origin.dataset.modelSize;
+    src.model = origin.dataset.modelName;
+    /*       hubcaps.forEach((hubcap) => {
+        hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
+        //   hubcap.style.backgroundImage = `url('assets/test.webp')`;
+      });
+     */
+
     const a = new Splide("#a", {
       perPage: 5,
       perMove: 1,
@@ -144,6 +175,7 @@ const handleCarMenu = () => {
         },
       },
     });
+
     const d = new Splide("#d", {
       perPage: 5,
       perMove: 1,
@@ -160,11 +192,67 @@ const handleCarMenu = () => {
       },
     });
 
-    if (origin.dataset.colorType || origin.dataset.carType) {
-      choices.carChoice = origin.dataset.carType || choices.carChoice;
-      choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
-      carImg.src = `assets/auto/${choices.carChoice}/${choices.colorChoice}.png`;
+    if (carType == "truck" || carType === "bus_scania") {
+      icons[0].classList.add("is-hidden");
+      icons[1].classList.add("is-hidden");
+      icons[2].classList.add("is-hidden");
+      icons[3].classList.remove("is-hidden");
+      document
+        .querySelectorAll(".splide__track")[0]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[1]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[2]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[3]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[3]
+        .classList.add("splide--slide-in");
+      argo.classList.add("is-hidden");
+      racing.classList.add("is-hidden");
+      jtac.classList.add("is-hidden");
+      max6.classList.remove("is-hidden");
+      logo.src = "assets/logo/truck.png";
+      d.mount();
+    } else {
+      icons[0].classList.remove("is-hidden");
+      icons[1].classList.remove("is-hidden");
+      icons[2].classList.remove("is-hidden");
+      icons[3].classList.add("is-hidden");
+      document
+        .querySelectorAll(".splide__track")[0]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[1]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[2]
+        .classList.remove("splide--slide-in");
+      document
+        .querySelectorAll(".splide__track")[3]
+        .classList.remove("splide--slide-in");
+      document;
+      document
+        .querySelectorAll(".splide__track")[0]
+        .classList.add("splide--slide-in");
+
+      argo.classList.remove("is-hidden");
+      racing.classList.add("is-hidden");
+      jtac.classList.add("is-hidden");
+      max6.classList.add("is-hidden");
+      logo.src = "assets/logo/argo.png";
+      a.mount();
+      src.company = "argo";
+      src.model = "1_avalon_carbon";
     }
+
+    hubcaps.forEach((hubcap) => {
+      hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
+    });
 
     if (origin.dataset.carType === "bmw") {
       resetCarValues();
@@ -199,42 +287,6 @@ const handleCarMenu = () => {
     } else if (origin.dataset.carType === "truck") {
       resetCarValues();
       car.classList.add("car--size-truck");
-    }
-    const hubcaps = document.querySelectorAll(".car__hubcap");
-
-    if (carType === "truck" || carType === "bus_scania") {
-      console.log("1");
-      d.mount();
-      resetNavigationValues();
-      document
-        .querySelectorAll(".splide__track")[3]
-        .classList.add("splide--slide-in");
-      icons[0].classList.add("is-hidden");
-      icons[1].classList.add("is-hidden");
-      icons[2].classList.add("is-hidden");
-      icons[3].classList.remove("is-hidden");
-      logo.src = "assets/logo/truck.png";
-      src.company = "";
-      src.model = "";
-      hubcaps.forEach((hubcap) => {
-        hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
-      });
-    } else {
-      console.log("2");
-      a.mount();
-      resetNavigationValues();
-      document
-        .querySelectorAll(".splide__track")[0]
-        .classList.add("splide--slide-in");
-      icons[0].classList.remove("is-hidden");
-      icons[1].classList.remove("is-hidden");
-      icons[2].classList.remove("is-hidden");
-      icons[3].classList.add("is-hidden");
-      src.company = "argo";
-      src.model = "1_avalon_carbon";
-      hubcaps.forEach((hubcap) => {
-        hubcap.style.backgroundImage = `url('./assets/kolpaki/${src.company}/${src.model}.webp')`;
-      });
     }
   };
 
