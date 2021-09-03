@@ -104,6 +104,8 @@ const handleCarMenu = () => {
   };
   const pickModelAndColor = (e) => {
     const origin = e.target;
+    const icons = document.querySelectorAll(".navigation__logo");
+    carType = origin.dataset.carType;
     if (origin.dataset.colorType || origin.dataset.carType) {
       choices.carChoice = origin.dataset.carType || choices.carChoice;
       choices.colorChoice = origin.dataset.colorType || choices.colorChoice;
@@ -144,7 +146,19 @@ const handleCarMenu = () => {
       resetCarValues();
       car.classList.add("car--size-truck");
     }
+    if (carType === "truck" || carType === "bus_scania") {
+      icons[0].classList.add("is-hidden");
+      icons[1].classList.add("is-hidden");
+      icons[2].classList.add("is-hidden");
+      icons[3].classList.remove("is-hidden");
+    } else {
+      icons[0].classList.remove("is-hidden");
+      icons[1].classList.remove("is-hidden");
+      icons[2].classList.remove("is-hidden");
+      icons[3].classList.add("is-hidden");
+    }
   };
+
   list.forEach((li) => {
     li.addEventListener("click", pickModelAndColor);
   });
