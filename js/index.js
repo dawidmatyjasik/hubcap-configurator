@@ -432,7 +432,7 @@ const handleRimMenu = (e) => {
       racing.classList.add("is-hidden");
       jtac.classList.add("is-hidden");
       max6.classList.remove("is-hidden");
-      logo.src = "assets/logo/max6.png";
+      logo.src = "assets/logo/truck.png";
       d.mount();
     }
   };
