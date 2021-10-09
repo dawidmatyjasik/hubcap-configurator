@@ -11,68 +11,11 @@ let choices = {
   header: "",
   color: "",
   size: "",
+  data: [],
+  argo: 0,
+  racing: 0,
+  jtac: 0,
 };
-
-const a = new Splide("#a", {
-  perPage: 5,
-  perMove: 1,
-  breakpoints: {
-    500: {
-      perPage: 2,
-    },
-    640: {
-      perPage: 3,
-    },
-    780: {
-      perPage: 3,
-    },
-  },
-});
-const b = new Splide("#b", {
-  perPage: 5,
-  perMove: 1,
-  breakpoints: {
-    500: {
-      perPage: 2,
-    },
-    640: {
-      perPage: 3,
-    },
-    780: {
-      perPage: 3,
-    },
-  },
-});
-const c = new Splide("#c", {
-  perPage: 5,
-  perMove: 1,
-  breakpoints: {
-    500: {
-      perPage: 2,
-    },
-    640: {
-      perPage: 3,
-    },
-    780: {
-      perPage: 3,
-    },
-  },
-});
-const d = new Splide("#d", {
-  perPage: 5,
-  perMove: 1,
-  breakpoints: {
-    500: {
-      perPage: 2,
-    },
-    640: {
-      perPage: 3,
-    },
-    780: {
-      perPage: 3,
-    },
-  },
-});
 
 const handleMenu = () => {
   const list = document.querySelectorAll(".settings li");
@@ -155,10 +98,6 @@ const handleCarMenu = () => {
   const carImg = document.querySelector(".car__img");
   const car = document.querySelector(".car");
   const list = document.querySelectorAll(".car-menu__li-img");
-  /* let choices = {
-        carChoice: "bmw",
-        colorChoice: "black",
-    }; */
   const resetCarValues = () => {
     const car = document.querySelector(".car");
     car.classList.remove(
@@ -200,6 +139,71 @@ const handleCarMenu = () => {
     const header = document.querySelector(".description__header");
     const color = document.querySelector(".description__color");
     const size = document.querySelector(".description__size");
+
+    const a = new Splide("#a", {
+      perPage: 5,
+      perMove: 1,
+      start: choices.argo,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+
+    const b = new Splide("#b", {
+      perPage: 5,
+      perMove: 1,
+      start: choices.racing,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+    const c = new Splide("#c", {
+      perPage: 5,
+      perMove: 1,
+      start: choices.jtac,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+    const d = new Splide("#d", {
+      perPage: 5,
+      perMove: 1,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
 
     if (origin.dataset.colorType || origin.dataset.carType) {
       choices.carChoice = origin.dataset.carType || choices.carChoice;
@@ -346,6 +350,71 @@ const handleRimMenu = (e) => {
   const pickCompany = (e) => {
     const origin = e.target;
 
+    const a = new Splide("#a", {
+      perPage: 5,
+      perMove: 1,
+      start: choices.argo,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+
+    const b = new Splide("#b", {
+      perPage: 5,
+      perMove: 1,
+      start: choices.racing,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+    const c = new Splide("#c", {
+      perPage: 5,
+      perMove: 1,
+      start: choices.jtac,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+    const d = new Splide("#d", {
+      perPage: 5,
+      perMove: 1,
+      breakpoints: {
+        500: {
+          perPage: 2,
+        },
+        640: {
+          perPage: 3,
+        },
+        780: {
+          perPage: 3,
+        },
+      },
+    });
+
     if (origin.dataset.companyName === "argo") {
       resetNavigationValues();
       document
@@ -430,8 +499,34 @@ const handleRimChange = () => {
       header.textContent = "TB01-F";
       color.textContent = "";
       size.textContent = '22.5"';
-      console.log(choices);
     }
+    const argoArr = [];
+    const racingArr = [];
+    const jtecArr = [];
+
+    choices.data.argo.map((item) => {
+      argoArr.push(item.path);
+    });
+    choices.data.racing.map((item) => {
+      racingArr.push(item.path);
+    });
+    choices.data.jtac.map((item) => {
+      jtecArr.push(item.path);
+    });
+    if (choices.company === "argo") {
+      choices.argo = argoArr.indexOf(choices.model);
+      choices.racing = 0;
+      choices.jtac = 0;
+    } else if (choices.company === "4racing") {
+      choices.argo = 0;
+      choices.racing = racingArr.indexOf(choices.model);
+      choices.jtac = 0;
+    } else if (choices.company === "jtac") {
+      choices.argo = 0;
+      choices.racing = 0;
+      choices.jtac = jtecArr.indexOf(choices.model);
+    }
+    console.log(a);
   };
   list.forEach((li) => {
     li.addEventListener("click", pickCompany);
@@ -474,6 +569,13 @@ async function renderUsers() {
   const racingList = document.querySelector(".racing-list");
   const jtacList = document.querySelector(".jtac-list");
   const maxList = document.querySelector(".max-list");
+  choices.data = data;
+
+  // for (const i of choices.data.argo) {
+  //   console.log(i.path);
+  //   choices.data.argo.path.indexOf(choices.path);
+  // }
+
   let argo = "";
   let racing = "";
   let jtac = "";
@@ -528,6 +630,7 @@ async function renderUsers() {
 
     jtac += htmlSegment;
   });
+
   data.max.forEach((data) => {
     let htmlSegment = `
         <li class="splide__slide">
