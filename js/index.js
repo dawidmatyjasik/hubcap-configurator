@@ -145,7 +145,7 @@ const handleCarMenu = () => {
       perMove: 1,
       start: choices.argo,
       breakpoints: {
-        500: {
+        450: {
           perPage: 2,
         },
         640: {
@@ -153,6 +153,9 @@ const handleCarMenu = () => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -162,7 +165,7 @@ const handleCarMenu = () => {
       perMove: 1,
       start: choices.racing,
       breakpoints: {
-        500: {
+        450: {
           perPage: 2,
         },
         640: {
@@ -170,6 +173,9 @@ const handleCarMenu = () => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -178,7 +184,7 @@ const handleCarMenu = () => {
       perMove: 1,
       start: choices.jtac,
       breakpoints: {
-        500: {
+        560: {
           perPage: 2,
         },
         640: {
@@ -186,6 +192,9 @@ const handleCarMenu = () => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -193,7 +202,7 @@ const handleCarMenu = () => {
       perPage: 5,
       perMove: 1,
       breakpoints: {
-        500: {
+        560: {
           perPage: 2,
         },
         640: {
@@ -201,6 +210,9 @@ const handleCarMenu = () => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -355,7 +367,7 @@ const handleRimMenu = (e) => {
       perMove: 1,
       start: choices.argo,
       breakpoints: {
-        500: {
+        560: {
           perPage: 2,
         },
         640: {
@@ -363,6 +375,9 @@ const handleRimMenu = (e) => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -372,7 +387,7 @@ const handleRimMenu = (e) => {
       perMove: 1,
       start: choices.racing,
       breakpoints: {
-        500: {
+        560: {
           perPage: 2,
         },
         640: {
@@ -380,6 +395,9 @@ const handleRimMenu = (e) => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -388,7 +406,7 @@ const handleRimMenu = (e) => {
       perMove: 1,
       start: choices.jtac,
       breakpoints: {
-        500: {
+        560: {
           perPage: 2,
         },
         640: {
@@ -396,6 +414,9 @@ const handleRimMenu = (e) => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -403,7 +424,7 @@ const handleRimMenu = (e) => {
       perPage: 5,
       perMove: 1,
       breakpoints: {
-        500: {
+        560: {
           perPage: 2,
         },
         640: {
@@ -411,6 +432,9 @@ const handleRimMenu = (e) => {
         },
         780: {
           perPage: 3,
+        },
+        1100: {
+          perPage: 4,
         },
       },
     });
@@ -526,7 +550,6 @@ const handleRimChange = () => {
       choices.racing = 0;
       choices.jtac = jtecArr.indexOf(choices.model);
     }
-    console.log(a);
   };
   list.forEach((li) => {
     li.addEventListener("click", pickCompany);
@@ -540,7 +563,7 @@ const createSplide = () => {
     perPage: 5,
     perMove: 1,
     breakpoints: {
-      500: {
+      450: {
         perPage: 2,
       },
       640: {
@@ -548,6 +571,9 @@ const createSplide = () => {
       },
       780: {
         perPage: 3,
+      },
+      1100: {
+        perPage: 4,
       },
     },
   }).mount();
@@ -704,6 +730,22 @@ const handleMenuChange = () => {
         })
     });
 } */
+const handleIconBackground = () => {
+  const icons = document.querySelectorAll(".navigation__logo");
+  icons.forEach((icon) => {
+    icon.addEventListener("click", (e) => {
+      icons.forEach((icon) => {});
+      icons.forEach((icon) => {
+        icon.classList.remove("navigation--active");
+
+        if (icon.dataset.icon === choices.company) {
+          icon.classList.add("navigation--active");
+        }
+      });
+    });
+  });
+};
+
 const handleIconChange = () => {
   const icons = document.querySelectorAll(".settings--change");
   icons.forEach((icon) => {
@@ -778,6 +820,7 @@ const start = () => {
   handleRimMenu();
   handleBackgroundChange();
   handleIconChange();
+  handleIconBackground();
   handleBrowser();
 };
 
