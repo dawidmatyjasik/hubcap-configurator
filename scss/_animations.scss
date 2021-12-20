@@ -1,6 +1,8 @@
 .animation-wrapper {
   position: relative;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 .navigation {
   position: absolute;

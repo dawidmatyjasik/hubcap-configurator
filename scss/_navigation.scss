@@ -63,12 +63,14 @@ nav {
   &__photo {
     object-fit: contain;
     cursor: pointer;
-    height: 100%;
-    min-width: 50px;
-    max-width: 80px;
+    // height: 100%;
+    // min-width: 50px;
+    // max-width: 80px;
     width: 70%;
+    padding: 5px 0;
+    height: 10vh;
     @media (max-width: 350px) {
-      min-width: 35px;
+      // min-width: 35px;
     }
   }
 }
