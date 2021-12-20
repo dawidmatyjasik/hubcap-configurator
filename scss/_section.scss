@@ -1,105 +1,125 @@
-.info{
-    flex-basis: 18vh;
+@import "fluid";
+.info {
+  // height: 100%;
+  display: grid;
+  grid-template-columns: 57.12vw 14.28vw 28.56vw;
+  grid-template-rows: 100%;
+  @media (max-width: 650px) {
+    grid-template-columns: calc(57.12vw + 14.28vw) 28.56vw;
+  }
+  &__logo-wrapper {
+    background: #cecece;
+    justify-self: center;
     display: grid;
-    grid-template-columns: 57.12vw 14.28vw 28.56vw;
-    grid-template-rows: 100%;
-    &__logo-wrapper{
-        background: #cecece;
-        justify-self: center;
-        display: inline-grid;
-        place-items: center;  
-        width: 100%;
+    place-items: center;
+    width: 100%;
+    @media (max-width: 650px) {
+      display: none;
     }
-    &__logo{
-        width: 80%;
-        padding: 0 2vw;    
-    }
+  }
+  &__logo {
+    width: 80%;
+    padding: 0 2vw;
+  }
 }
-.description{
-    display:flex;
-    flex-direction: column;
-    text-transform: uppercase;
-    &--flex{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+.description {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  &--flex {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__header {
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    color: grey;
+    @include fluid-type(320px, 1920px, 10px, 28px);
+    /* font-size: 0.6rem;
+    @media (min-width: 400px) {
+      font-size: 0.75rem;
     }
-    &__header{
-        font-weight: 700;
-        font-family: 'Open Sans', sans-serif;
-        color: grey;
-        font-size: .6rem;
-        @media (min-width: 400px) {
-            font-size: .75rem;
-        }
-        @media (min-width: 500px) {
-            font-size: 1rem;
-        }
-        @media (min-width: 800px) {
-            font-size: 1.25rem;
-        }
-        @media (min-width: 1000px) {
-            font-size: 1.75rem;
-        }
+    @media (min-width: 500px) {
+      font-size: 1rem;
     }
-    &__color{
-        font-size: .5rem;
-        @media (min-width: 400px) {
-            font-size: .65rem;
-        }
-        @media (min-width: 500px) {
-            font-size: .9rem;
-        }
-        @media (min-width: 800px) {
-            font-size: 1.15rem;
-        }
+    @media (min-width: 800px) {
+      font-size: 1.25rem;
+    }
     @media (min-width: 1000px) {
-        font-size: 1.65rem;
+      font-size: 1.75rem;
+    } */
+  }
+  &__color {
+    @include fluid-type(320px, 1920px, 7.5px, 24px);
+    font-family: "Open Sans", sans-serif;
+    /* font-size: 0.5rem;
+    @media (min-width: 400px) {
+      font-size: 0.65rem;
     }
+    @media (min-width: 500px) {
+      font-size: 0.9rem;
     }
-    &__size{
-        font-weight: 700;
-        font-size: .6rem;
-        color: black;
-        @media (min-width: 400px) {
-            font-size: .75rem;
-        }
-        @media (min-width: 500px) {
-            font-size: 1rem;
-        }
-        @media (min-width: 800px) {
-            font-size: 1.25rem;
-        }
-        @media (min-width: 1000px) {
-            font-size: 1.5rem;
-        }
-        
-        
+    @media (min-width: 800px) {
+      font-size: 1.15rem;
     }
-    &--background{
-       background-color: #ebebeb;
-    }
-}
-.footer{
-    flex-basis: 2vh;
-    font-size: .6rem;
-    font-family: 'Open Sans', sans-serif;
-    text-align: right;
-    margin-right: 1rem;
-    &__name{
-        color: #DB004E;
-    }
-    &__surname{
-        color: #23527c;
-    }
-}
-a{
-    text-decoration: none !important;
-    color: black !important;
-}
-.fa-plus-circle{
-    text-decoration: none;
+    @media (min-width: 1000px) {
+      font-size: 1.65rem;
+    } */
+  }
+  // #bcbcbc
+  &__size {
+    font-weight: 700;
+    font-family: "Open Sans", sans-serif;
+    // font-size: 0.6rem;
+
     color: black;
+    @include fluid-type(320px, 1920px, 9px, 28px);
+    /* @media (min-width: 400px) {
+      font-size: 0.75rem;
+    }
+    @media (min-width: 500px) {
+      font-size: 1rem;
+    }
+    @media (min-width: 800px) {
+      font-size: 1.25rem;
+    }
+    @media (min-width: 1000px) {
+      font-size: 1.5rem;
+    }*/
+  }
+  &--background {
+    background-color: #ebebeb;
+  }
+}
+.footer {
+  height: 100%;
+  @include fluid-type(320px, 1920px, 8px, 10px);
+  letter-spacing: 0.1px;
+  // font-size: 0.6rem;
+  // font-size: 9px;
+  font-family: "Open Sans", sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 1rem;
+  &__name {
+    color: #db004e;
+  }
+  &__surname {
+    color: #23527c !important;
+  }
+  &__surname > a {
+    color: #23527c !important;
+  }
+}
+a {
+  text-decoration: none !important;
+  color: black !important;
+}
+.fa-plus-circle {
+  text-decoration: none;
+  color: black;
 }

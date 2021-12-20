@@ -18,14 +18,6 @@
 </head>
 
 <body>
-        <div class="preload">
-                <div class="circles-group">
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                        <div class="circle"></div>
-                </div>
-        </div>
         <nav>
                 <ul class="settings">
                         <li class="settings__logo settings--change" data-list-type="models"><img
@@ -40,14 +32,14 @@
                 </ul>
                 <div class="animation-wrapper">
                         <ul class="navigation navigation--slide-in" id="slide">
-                                <li class="navigation__logo"><img src="assets/logo/argo.png" data-company-name="argo"
-                                                class="navigation__photo"></li>
-                                <li class="navigation__logo"><img src="assets/logo/4racing.png"
+                                <li  class="navigation__logo navigation--active" data-icon="argo"><img src="assets/logo/argo.png" data-company-name="argo"
+                                                class="navigation__photo  "></li>
+                                <li  class="navigation__logo" data-icon="4racing"><img src="assets/logo/4racing.png"
                                                 data-company-name="4racing" class="navigation__photo"></li>
-                                <li class="navigation__logo"> <img src="assets/logo//j-tec.png" data-company-name="jtac"
+                                <li class="navigation__logo" data-icon="jtac"> <img src="assets/logo//j-tec.png" data-company-name="jtac"
                                                 class="navigation__photo"></li>
-                                <li class="navigation__logo"> <img src="assets/logo/max6.png" data-company-name="max6"
-                                                class="navigation__photo"></li>
+                                <li class="navigation__logo is-hidden"> <img src="assets/logo/truck.png" data-company-name="max6"
+                                                class="navigation__photo navigation--active"></li>
                         </ul>
                 </div>
                 <!-- <div class="logo--wrapper">
@@ -57,7 +49,7 @@
 
         <div class="car-wrapper">
                 <nav class="car-menu">
-                        <ul class="car-menu__model-list visiblity">
+                        <ul class="car-menu__model-list is-hidden">
                                 <li class="car-menu__li"><img src="assets//menu/bmw.png" alt="" data-car-type="bmw"
                                                 class="car-menu__li-img"></li>
                                 <li class="car-menu__li"><img src="assets/menu/mazda_sedan.png" alt=""
@@ -121,15 +113,6 @@
                         <img src="assets/auto/bmw/black.png" class="car__img">
                         <div class="car__hubcap car--hubcap-front"></div>
                         <div class="car__hubcap car--hubcap-back"></div>
-                        <!-- <img src="assets/logo/gorecki-kopia.png" alt="górecki logo" class="logo"> -->
-                        <!-- <ul class="background-menu">
-                                <li class="background-menu__element"><img src="assets/tlo_4.png"
-                                                class="background-menu__image" data-background="tlo_4"></li>
-                                <li class="background-menu__element"><img src="assets/tlo_2.png"
-                                                class="background-menu__image" data-background="tlo_2"></li>
-                                <li class="background-menu__element"><img src="assets/tlo_3.png"
-                                                class="background-menu__image" data-background="tlo_3"></li>
-                        </ul> -->
                 </main>
         </div>
         <section class="info">
@@ -174,7 +157,7 @@
                 <div class="info__logo-wrapper"><img src="assets/logo/argo.png" alt="" class="info__logo"></div>
                 <div class="description">
                         <div class="description--flex">
-                                <h1 class="description__header">Avalone Pro</h1>
+                                <h1 class="description__header">Avalon Carbon</h1>
                         </div>
                         <div class="description--flex">
                                 <h2 class="description__color"></h2>
@@ -185,7 +168,7 @@
                 </div>
         </section>
         <footer class="footer">
-                <h3>Created by <span class="footer__name">Dawid</span> <span class="footer__surname">Spisak</span></h3>
+                <h3>Created by <span class="footer__name">Dawid Spisak</span> & <span class="footer__surname"><a href="https://www.magm.me/">Magme Agency</a></span></h3>
         </footer>
         </a>
         <script src="node_modules/@splidejs/splide/dist/js/splide.min.js"></script>
